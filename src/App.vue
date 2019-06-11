@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <hero-comp/>
+    <skills-comp/>
   </div>
 </template>
 
 <script>
 import HeroComp from "@/components/Hero.vue";
+import SkillsComp from "@/components/Skills.vue";
 
 export default {
   name: "app",
-  components: { HeroComp }
+  components: { HeroComp, SkillsComp }
 };
 </script>
 

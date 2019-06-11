@@ -3,13 +3,21 @@
     <h1 class="big">Hi,</h1>
     <h2>I'm a full-stack web developer.</h2>
     <h3 class="likes">I like to...</h3>
-    <p>code efficently</p>
+    <item-runner :items="likes"></item-runner>
   </div>
 </template>
 
 <script>
+import ItemRunner from "@/components/ItemRunner.vue";
+
 export default {
-  name: "hero-comp"
+  name: "hero-comp",
+  components: { ItemRunner },
+  data() {
+    return {
+      likes: ["efficent code", "simple designs", "snappy performance"]
+    };
+  }
 };
 </script>
 
@@ -17,7 +25,7 @@ export default {
 #hero {
   display: grid;
   grid-gap: 0.5em;
-  place-content: center;
+  align-content: center;
   justify-items: center;
 
   .big {
