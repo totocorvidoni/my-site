@@ -16,7 +16,7 @@ export default {
     return {
       projects: [
         {
-          name: "Placeholder Project",
+          name: "Placeholder Project 1",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
           tags: ["tag1", "tag two", "longer tag", "tag4"],
@@ -40,7 +40,7 @@ export default {
           ]
         },
         {
-          name: "Placeholder Project",
+          name: "Placeholder Project 2",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
           tags: ["tag1", "tag two", "longer tag", "tag4"],
@@ -64,7 +64,7 @@ export default {
           ]
         },
         {
-          name: "Placeholder Project",
+          name: "Placeholder Project 3",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
           tags: ["tag1", "tag two", "longer tag", "tag4"],
@@ -88,7 +88,7 @@ export default {
           ]
         },
         {
-          name: "Placeholder Project",
+          name: "Placeholder Project 4",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
           tags: ["tag1", "tag two", "longer tag", "tag4"],
@@ -112,7 +112,7 @@ export default {
           ]
         },
         {
-          name: "Placeholder Project",
+          name: "Placeholder Project 5",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
           tags: ["tag1", "tag two", "longer tag", "tag4"],
@@ -136,7 +136,7 @@ export default {
           ]
         },
         {
-          name: "Placeholder Project",
+          name: "Placeholder Project 6",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
           tags: ["tag1", "tag two", "longer tag", "tag4"],
@@ -168,9 +168,11 @@ export default {
 <style lang="scss">
 #projects {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   background: $grey;
   color: $white;
+  padding: 1em;
 
   & > .title {
     grid-column: 1 / -1;
