@@ -1,17 +1,19 @@
 <template>
   <div id="app">
     <hero-comp/>
+    <about-comp/>
     <skills-comp/>
   </div>
 </template>
 
 <script>
 import HeroComp from "@/components/Hero.vue";
+import AboutComp from "@/components/About.vue";
 import SkillsComp from "@/components/Skills.vue";
 
 export default {
   name: "app",
-  components: { HeroComp, SkillsComp }
+  components: { HeroComp, AboutComp, SkillsComp }
 };
 </script>
 
@@ -22,20 +24,40 @@ export default {
   box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
+html {
+  font-size: 16pt;
 }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// p {
+//   margin: 0;
+// }
 
 #app {
   display: grid;
-  grid-template-rows: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100vh auto;
+  grid-template-areas:
+    "hero   hero  hero   hero"
+    "about about skills skills";
   font-family: $base-font;
   color: $grey;
+}
+
+#hero {
+  grid-area: hero;
+}
+
+#about {
+  grid-area: about;
+}
+
+#skills {
+  grid-area: skills;
 }
 </style>
