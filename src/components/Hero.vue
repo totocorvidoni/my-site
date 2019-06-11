@@ -2,8 +2,12 @@
   <div id="hero">
     <h1 class="big">Hi,</h1>
     <h2>I'm a full-stack web developer.</h2>
-    <h3 class="likes">I like to...</h3>
-    <item-runner :items="likes"></item-runner>
+    <h3 class="likes">I like ...</h3>
+    <item-runner
+      :items="likes"
+      :delay="2000"
+      :loops="20"
+    >coding efficient and intuitive apps for the user.</item-runner>
   </div>
 </template>
 

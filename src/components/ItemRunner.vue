@@ -1,59 +1,87 @@
 <template>
-  <transition name="slide" mode="out-in">
-    <p class="item" v-if="activeItem < items.length - 1" key="items">{{ items[activeItem] }}</p>
-    <p class="item" v-else key="message">code efficient and intuitive apps for the user.</p>
-  </transition>
+  <div class="wrapper">
+    <transition name="slide">
+      <p class="item" v-if="showMessage" key="message">
+        <slot/>
+      </p>
+      <p class="item" v-else :key="activeItem">{{ items[activeItem] }}</p>
+    </transition>
+  </div>
 </template>
 
 <script>
 export default {
   name: "item-runner",
-  props: { items: Array },
+  props: {
+    items: Array,
+    delay: Number,
+    loops: Number
+  },
   data() {
     return {
-      activeItem: 0
+      activeItem: 0,
+      showMessage: false
     };
   },
 
   methods: {
+    // Messages will keep looping increasigly faster until currentLoop == loops,
+    // at which point the final message will be displayed.
     itemStep(index, delay, loops, currentLoop = 0) {
-      // console.log(currentLoop, loops, this.items[this.activeItem]);
       this.activeItem = index;
       if (index == this.items.length - 1 && currentLoop != loops) {
         currentLoop += 1;
         index = -1;
-        // console.log("index reduced to " + index);
-        // console.log(index < this.items.length - 1);
       }
 
       if (index < this.items.length - 1) {
-        // console.log("index evaluated");
+        // caps looping speeed at 50ms.
+        const nextDelay = delay <= 50 ? 50 : delay / 1.1;
         setTimeout(() => {
-          this.itemStep(index + 1, delay / 1.2, loops, currentLoop);
+          this.itemStep(index + 1, nextDelay, loops, currentLoop);
         }, delay);
+      } else {
+        this.showMessage = true;
       }
     }
   },
 
   mounted() {
     setTimeout(() => {
-      this.itemStep(this.activeItem, 1000, 5);
-    }, 100);
+      this.itemStep(this.activeItem, this.delay, this.loops);
+    }, 1000);
   }
 };
 </script>
 
 <style lang="scss">
+.wrapper {
+  position: relative;
+  width: 100%;
+
+  p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}
+
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.5s;
+  transition: all 100ms ease;
 }
 
 .slide-enter {
-  left: 100%;
+  transform: translateX(25%);
+  opacity: 0;
 }
 
 .slide-leave-to {
-  right: 100%;
+  transform: translateX(-25%);
+  opacity: 0;
 }
 </style>
