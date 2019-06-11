@@ -50,7 +50,6 @@ export default {
 <style lang="scss">
 #skills {
   background: $grey;
-  border-top-left-radius: 0.5em;
   padding: 2rem;
 
   & > .wrapper {
@@ -58,6 +57,7 @@ export default {
     text-align: center;
     border-radius: 0.5em;
     height: 100%;
+    margin: auto 0;
   }
 
   .front {

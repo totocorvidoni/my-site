@@ -15,6 +15,7 @@ export default {
 <style lang="scss">
 #about {
   padding: 3rem;
+
   & > h2 {
     text-align: center;
   }

@@ -3,6 +3,7 @@
     <hero-comp/>
     <about-comp/>
     <skills-comp/>
+    <projects-comp/>
   </div>
 </template>
 
@@ -10,10 +11,11 @@
 import HeroComp from "@/components/Hero.vue";
 import AboutComp from "@/components/About.vue";
 import SkillsComp from "@/components/Skills.vue";
+import ProjectsComp from "@/components/Projects.vue";
 
 export default {
   name: "app",
-  components: { HeroComp, AboutComp, SkillsComp }
+  components: { HeroComp, AboutComp, SkillsComp, ProjectsComp }
 };
 </script>
 
@@ -41,10 +43,11 @@ html {
 #app {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 100vh auto;
+  grid-template-rows: 100vh auto auto;
   grid-template-areas:
-    "hero   hero  hero   hero"
-    "about about skills skills";
+    "hero     hero     hero     hero"
+    "about    about    skills   skills"
+    "projects projects projects projects";
   font-family: $base-font;
   color: $grey;
 }
@@ -59,5 +62,9 @@ html {
 
 #skills {
   grid-area: skills;
+}
+
+#projects {
+  grid-area: projects;
 }
 </style>
