@@ -36,7 +36,7 @@ export default {
 
       if (index < this.items.length - 1) {
         // caps looping speeed at 50ms.
-        const nextDelay = delay <= 50 ? 50 : delay / 1.1;
+        const nextDelay = delay <= 50 ? 50 : delay / 1.2;
         setTimeout(() => {
           this.itemStep(index + 1, nextDelay, loops, currentLoop);
         }, delay);

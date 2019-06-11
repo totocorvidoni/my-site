@@ -5,8 +5,8 @@
     <h3 class="likes">I like ...</h3>
     <item-runner
       :items="likes"
-      :delay="2000"
-      :loops="20"
+      :delay="1500"
+      :loops="35"
     >coding efficient and intuitive apps for the user.</item-runner>
   </div>
 </template>
