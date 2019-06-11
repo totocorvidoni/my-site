@@ -72,7 +72,7 @@ export default {
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 100ms ease;
+  transition: all 150ms $rubber-band;
 }
 
 .slide-enter {
