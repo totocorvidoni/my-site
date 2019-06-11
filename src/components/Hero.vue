@@ -2,11 +2,11 @@
   <div id="hero">
     <h1 class="big">Hi,</h1>
     <h2>I'm a full-stack web developer.</h2>
-    <h3 class="likes">I like ...</h3>
+    <h3 class="likes">I enjoy...</h3>
     <item-runner
       :items="likes"
       :delay="1500"
-      :loops="35"
+      :loops="20"
     >coding efficient and intuitive apps for the user.</item-runner>
   </div>
 </template>
@@ -39,6 +39,15 @@ export default {
 
   .likes {
     margin-top: 3em;
+    color: $green;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 </style>
