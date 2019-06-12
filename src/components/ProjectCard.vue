@@ -90,6 +90,20 @@ export default {
 
   .description {
     height: 100%;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0.25rem;
+      border-radius: 0.25em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $green;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px rgba($color: $black, $alpha: 0.5);
+  }
   }
 
   .tag-wrapper {
