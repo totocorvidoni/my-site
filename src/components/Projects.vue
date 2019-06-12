@@ -7,6 +7,7 @@
 
 <script>
 import ProjectCard from "@/components/ProjectCard.vue";
+import projectList from "@/assets/projectList";
 
 export default {
   name: "projects-comp",
@@ -14,152 +15,7 @@ export default {
 
   data() {
     return {
-      projects: [
-        {
-          name: "Placeholder Project 1",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
-          tags: ["tag1", "tag two", "longer tag", "tag4"],
-          pictures: [
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            }
-          ]
-        },
-        {
-          name: "Placeholder Project 2",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
-          tags: ["tag1", "tag two", "longer tag", "tag4"],
-          pictures: [
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            }
-          ]
-        },
-        {
-          name: "Placeholder Project 3",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
-          tags: ["tag1", "tag two", "longer tag", "tag4"],
-          pictures: [
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            }
-          ]
-        },
-        {
-          name: "Placeholder Project 4",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
-          tags: ["tag1", "tag two", "longer tag", "tag4"],
-          pictures: [
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            }
-          ]
-        },
-        {
-          name: "Placeholder Project 5",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
-          tags: ["tag1", "tag two", "longer tag", "tag4"],
-          pictures: [
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            }
-          ]
-        },
-        {
-          name: "Placeholder Project 6",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci? Iure placeat officiis maiores?",
-          tags: ["tag1", "tag two", "longer tag", "tag4"],
-          pictures: [
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            },
-            {
-              url: require("@/assets/images/picture.png"),
-              alt: "placeholder alternate text."
-            }
-          ]
-        }
-      ]
+      projects: projectList
     };
   }
 };
@@ -170,6 +26,8 @@ export default {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  // grid-auto-rows: 30rem;
   background: $grey;
   color: $white;
   padding: 1em;

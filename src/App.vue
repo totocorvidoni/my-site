@@ -63,4 +63,21 @@ html {
 #projects {
   grid-area: projects;
 }
+
+// Transitions
+
+.flip-enter-active,
+.flip-leave-active {
+  transition: all 250ms $rubber-band;
+}
+
+.flip-enter,
+.flip-leave-to {
+  transform: scale(0, 0.95);
+}
+
+.flip-enter-to,
+.flip-leave {
+  transform: scale(1, 1);
+}
 </style>
