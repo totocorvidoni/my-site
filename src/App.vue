@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <header-comp/>
     <hero-comp/>
     <about-comp/>
     <skills-comp/>
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import HeaderComp from "@/components/Header.vue";
 import HeroComp from "@/components/Hero.vue";
 import AboutComp from "@/components/About.vue";
 import SkillsComp from "@/components/Skills.vue";
@@ -15,7 +17,7 @@ import ProjectsComp from "@/components/Projects.vue";
 
 export default {
   name: "app",
-  components: { HeroComp, AboutComp, SkillsComp, ProjectsComp }
+  components: { HeaderComp, HeroComp, AboutComp, SkillsComp, ProjectsComp }
 };
 </script>
 
@@ -30,16 +32,6 @@ html {
   font-size: 16pt;
 }
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6,
-// p {
-//   margin: 0;
-// }
-
 #app {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -50,6 +42,10 @@ html {
     "projects projects projects projects";
   font-family: $base-font;
   color: $grey;
+}
+
+#header {
+  grid-area: header;
 }
 
 #hero {
