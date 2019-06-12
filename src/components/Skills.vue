@@ -78,7 +78,7 @@ export default {
     position: absolute;
     right: 0;
     bottom: 0;
-    color: $grey;
+    color: $green;
     padding: 1em;
     writing-mode: vertical-lr;
     text-orientation: upright;
@@ -87,23 +87,8 @@ export default {
 
     &:hover {
       cursor: pointer;
-      filter: brightness(150%);
+      filter: brightness(120%);
     }
   }
-}
-
-.flip-enter-active,
-.flip-leave-active {
-  transition: all 250ms $rubber-band;
-}
-
-.flip-enter,
-.flip-leave-to {
-  transform: scale(0, 0.95);
-}
-
-.flip-enter-to,
-.flip-leave {
-  transform: scale(1, 1);
 }
 </style>

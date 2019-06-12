@@ -5,7 +5,7 @@
       href="mailto:totocorvidoni@gmail.com"
       target="_blank"
       rel="nooppener norefferer"
-    >Let's get in touch</a>
+    >Let's get in touch!</a>
   </div>
 </template>
 
