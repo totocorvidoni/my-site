@@ -103,7 +103,7 @@ export default {
 
     &::-webkit-scrollbar-track {
       box-shadow: inset 0 0 5px rgba($color: $black, $alpha: 0.5);
-  }
+    }
   }
 
   .tag-wrapper {
@@ -192,17 +192,9 @@ export default {
   }
 
   .flip {
-    color: $green;
-    letter-spacing: 0.3em;
     margin-top: auto;
     text-align: center;
-    transition: all 200ms ease;
     width: 100%;
-
-    &:hover {
-      cursor: pointer;
-      filter: brightness(120%);
-    }
   }
 }
 </style>

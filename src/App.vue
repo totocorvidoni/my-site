@@ -64,6 +64,18 @@ html {
   grid-area: projects;
 }
 
+.flip {
+  color: $green;
+  letter-spacing: 0.3em;
+  transition: all 200ms ease;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+  }
+}
+
 // Transitions
 
 .flip-enter-active,

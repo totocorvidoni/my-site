@@ -78,17 +78,10 @@ export default {
     position: absolute;
     right: 0;
     bottom: 0;
-    color: $green;
     padding: 1em;
     writing-mode: vertical-lr;
     text-orientation: upright;
     letter-spacing: 0.3em;
-    transition: all 200ms ease;
-
-    &:hover {
-      cursor: pointer;
-      filter: brightness(120%);
-    }
   }
 }
 </style>
