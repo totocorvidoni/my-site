@@ -6,7 +6,7 @@
         <ul>
           <li v-for="skill in activeSkills" :key="skill.name">{{ skill.name }}</li>
         </ul>
-        <span class="flip" @click="showingFront = !showingFront">flip↪</span>
+        <span class="flip" @click="showingFront = !showingFront">flip</span>
       </div>
     </transition>
   </div>
@@ -19,11 +19,11 @@ export default {
     return {
       showingFront: true,
       front: [
-        { name: "Vue.js", mastery: 80 },
-        { name: "Raw Javascript", mastery: 90 },
-        { name: "HTML", mastery: 100 },
-        { name: "CSS + Sass", mastery: 80 },
-        { name: "Webpack", mastery: 60 }
+        { name: "Vue.js" },
+        { name: "Vanilla Javascript" },
+        { name: "HTML" },
+        { name: "CSS + Sass" },
+        { name: "Webpack" }
       ],
 
       back: [
@@ -50,14 +50,13 @@ export default {
 <style lang="scss">
 #skills {
   background: $grey;
-  padding: 2rem;
+  // padding: 1rem 2rem 0;
 
   & > .wrapper {
     padding: 1em;
     text-align: center;
-    border-radius: 0.5em;
     height: 100%;
-    margin: auto 0;
+    margin: auto;
   }
 
   .front {

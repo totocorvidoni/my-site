@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,400i,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -35,11 +35,13 @@ html {
 #app {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 100vh auto auto;
+  grid-template-rows: 100vh auto auto auto;
   grid-template-areas:
     "hero     hero     hero     hero"
-    "about    about    skills   skills"
+    "about    about    about   about"
+    "skills    skills    skills   skills"
     "projects projects projects projects";
+  justify-items: center;
   font-family: $base-font;
   color: $grey;
 }
@@ -54,10 +56,14 @@ html {
 
 #about {
   grid-area: about;
+  margin: 0 2rem;
+  max-width: 800px;
 }
 
 #skills {
   grid-area: skills;
+  margin: 0 2rem;
+  max-width: 800px;
 }
 
 #projects {

@@ -2,7 +2,12 @@
   <div class="project-card">
     <transition name="flip" mode="out-in">
       <div v-if="showingFront" class="card-front" key="front">
-        <img class="image" :src="coverImage.url" :alt="coverImage.alt">
+        <img
+          class="image"
+          :src="coverImage.thumb"
+          :alt="coverImage.alt"
+          @click="showingFront = false"
+        >
         <div class="card-wrapper">
           <h3 class="name">{{ name }}</h3>
           <p class="description">{{ description}}</p>
@@ -14,9 +19,13 @@
       </div>
       <div v-else class="card-back" key="back">
         <div class="images-wrapper">
-          <div class="image-wrapper" v-for="image in images">
-            <img :src="image.url" :alt="image.alt" class="image2">
-          </div>
+          <vue-pure-lightbox
+            v-for="(image, index) in images"
+            class="image-wrapper"
+            :thumbnail="image.thumb"
+            :images="fullImages"
+            :open-at-index="index"
+          />
         </div>
         <div class="links">
           <a :href="links.live" target="_blank" rel="nooppener norefferer" class="link">
@@ -35,17 +44,19 @@
 </template>
 
 <script>
+import VuePureLightbox from "vue-pure-lightbox";
+import styles from "@/scss/lightbox.scss";
+
 import BaseTag from "@/components/base/Tag.vue";
 
 export default {
   name: "project-card",
-  components: { BaseTag },
+  components: { VuePureLightbox, BaseTag },
   props: {
     name: String,
     links: Object,
     description: String,
     tags: Array,
-    coverImage: Object,
     images: Array
   },
 
@@ -53,6 +64,16 @@ export default {
     return {
       showingFront: true
     };
+  },
+
+  computed: {
+    coverImage() {
+      return this.images[0];
+    },
+
+    fullImages() {
+      return this.images.map(image => image.full);
+    }
   }
 };
 </script>
@@ -71,8 +92,12 @@ export default {
 
   .image {
     max-width: 100%;
-    max-height: 100%;
+    height: 250px;
     object-fit: cover;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .card-wrapper {
@@ -126,7 +151,6 @@ export default {
   }
 
   .image-wrapper {
-    position: relative;
     height: 25%;
 
     img {
@@ -134,26 +158,6 @@ export default {
       max-height: 100%;
       width: 100%;
       object-fit: cover;
-    }
-
-    &:before {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: rgba($color: $black, $alpha: 0.2);
-      content: "";
-    }
-
-    &:first-child img {
-      border-top-left-radius: 0.5em;
-      border-top-right-radius: 0.5em;
-    }
-
-    &:last-child img {
-      border-bottom-left-radius: 0.5em;
-      border-bottom-right-radius: 0.5em;
     }
   }
 
