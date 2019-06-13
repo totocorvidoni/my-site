@@ -1,7 +1,9 @@
 <template>
   <div id="projects">
-    <h2 class="title">Some of my projects</h2>
-    <project-card v-for="project in projects" :key="project.name" v-bind="project"/>
+    <div class="project-grid">
+      <h2 class="title">Some of my projects</h2>
+      <project-card v-for="project in projects" :key="project.name" v-bind="project"/>
+    </div>
   </div>
 </template>
 
@@ -23,18 +25,26 @@ export default {
 
 <style lang="scss">
 #projects {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: auto;
-  grid-auto-rows: 30rem;
   background: $grey;
-  color: $white;
-  padding: 1em;
+  width: 100%;
 
-  & > .title {
-    grid-column: 1 / -1;
-    text-align: center;
+  .project-grid {
+    justify-self: stretch;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-rows: auto;
+    grid-auto-rows: 30rem;
+    justify-content: center;
+    color: $white;
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 1em 3em;
+
+    & > .title {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
   }
 }
 </style>

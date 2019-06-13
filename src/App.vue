@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <header-comp/>
+    <nav-comp/>
     <hero-comp/>
     <about-comp/>
     <skills-comp/>
@@ -10,6 +11,7 @@
 
 <script>
 import HeaderComp from "@/components/Header.vue";
+import NavComp from "@/components/Navigator.vue";
 import HeroComp from "@/components/Hero.vue";
 import AboutComp from "@/components/About.vue";
 import SkillsComp from "@/components/Skills.vue";
@@ -17,7 +19,14 @@ import ProjectsComp from "@/components/Projects.vue";
 
 export default {
   name: "app",
-  components: { HeaderComp, HeroComp, AboutComp, SkillsComp, ProjectsComp }
+  components: {
+    HeaderComp,
+    NavComp,
+    HeroComp,
+    AboutComp,
+    SkillsComp,
+    ProjectsComp
+  }
 };
 </script>
 
@@ -30,6 +39,7 @@ export default {
 
 html {
   font-size: 16pt;
+  // scroll-behavior: smooth;
 }
 
 #app {
@@ -76,9 +86,14 @@ html {
   transition: all 200ms ease;
   user-select: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
     filter: brightness(120%);
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 

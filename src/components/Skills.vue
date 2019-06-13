@@ -2,11 +2,11 @@
   <div id="skills">
     <transition name="flip" mode="out-in">
       <div class="wrapper" :key="showingFront" :class="showingFront ? 'front' : 'back'">
-        <h2>{{ skillsTitle }}</h2>
+        <h2 class="title">{{ skillsTitle }}</h2>
         <ul>
           <li v-for="skill in activeSkills" :key="skill.name">{{ skill.name }}</li>
         </ul>
-        <span class="flip" @click="showingFront = !showingFront">flip</span>
+        <span class="flip" @click="showingFront = !showingFront" tabindex="0">- flip -</span>
       </div>
     </transition>
   </div>
@@ -41,7 +41,7 @@ export default {
     },
 
     skillsTitle() {
-      return `${this.showingFront ? "Front" : "Back"}-End`;
+      return `${this.showingFront ? "Front" : "Back"}-end skills and tools`;
     }
   }
 };
@@ -59,6 +59,10 @@ export default {
     margin: auto;
   }
 
+  .title {
+    margin: 0;
+  }
+
   .front {
     background: $white;
   }
@@ -74,13 +78,7 @@ export default {
   }
 
   .flip {
-    position: absolute;
-    right: 0;
-    bottom: 0;
     padding: 1em;
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    letter-spacing: 0.3em;
   }
 }
 </style>

@@ -39,7 +39,7 @@ export default {
 
   & > a {
     color: $grey-light;
-    transition: all 150ms ease;
+    transition: $link;
     color: $orange;
     text-decoration: none;
 

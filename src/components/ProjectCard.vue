@@ -14,7 +14,7 @@
           <div class="tag-wrapper">
             <base-tag v-for="tag in tags">{{ tag }}</base-tag>
           </div>
-          <div class="flip" @click="showingFront = false">- flip -</div>
+          <div class="flip" @click="showingFront = false" tabindex="0">- flip -</div>
         </div>
       </div>
       <div v-else class="card-back" key="back">
@@ -37,7 +37,7 @@
             <div class="link-text">Source Code</div>
           </a>
         </div>
-        <div class="flip" @click="showingFront = true">- flip -</div>
+        <div class="flip" @click="showingFront = true" tabindex="0">- flip -</div>
       </div>
     </transition>
   </div>
@@ -174,7 +174,7 @@ export default {
     padding: 0.5em;
     text-decoration: none;
     font-size: 0.8em;
-    transition: all 200ms ease;
+    transition: $link;
 
     &:hover {
       filter: brightness(120%);
