@@ -6,13 +6,15 @@ $base-font: 'Source Sans Pro', $sans;
 // Colors
 
 $white: hsl(0, 0%, 100%);
-$white-darker: hsl(0, 0%, 90%);
 $orange: hsl(40, 100%, 65%);
 $black: hsl(200, 50%, 10%);
 $grey: hsl(200, 10%, 40%);
 $grey-light: hsl(200, 10%, 60%);
+$grey-lightest: hsla(200, 10%, 90%);
 $green: hsl(100, 35%, 55%);
 
+$darker: hsla(200, 50%, 10%, 0.5);
+$lighter: hsla(255, 100%, 100%, 0.5);
 // Transition
 
 $rubber-band: cubic-bezier(0.3, 1.1, 0.3, 1.1);

@@ -1,12 +1,47 @@
 <template>
   <div id="skills">
     <transition name="flip" mode="out-in">
-      <div class="wrapper" :key="showingFront" :class="showingFront ? 'front' : 'back'">
+      <div
+        class="wrapper"
+        :key="showingFront"
+        :class="showingFront ? 'front' : 'back'"
+        @click="showingFront = !showingFront"
+      >
         <h2 class="title">{{ skillsTitle }}</h2>
-        <ul>
-          <li v-for="skill in activeSkills" :key="skill.name">{{ skill.name }}</li>
-        </ul>
-        <span class="flip" @click="showingFront = !showingFront" tabindex="0">- flip -</span>
+        <div v-if="showingFront" class="description">
+          <p>
+            I mostly develop
+            <strong class="skill">Vue.js</strong> web apps setting them up using
+            <strong class="skill">Webpack</strong> and
+            <strong class="skill">npm</strong>.
+            The building blocks I use according the projects needs are
+            <strong
+              class="skill"
+            >HTML5</strong>,
+            <strong class="skill">CSS3 + Sass</strong> and
+            <strong class="skill">Javascript</strong>.
+          </p>
+          <p>
+            I also have also worked on projects using
+            <strong class="skill">React</strong> and
+            <strong class="skill">Wordpress</strong>
+          </p>
+          <p>
+            My main focus when developing are keeping the codebase
+            <strong>organized</strong> and
+            <strong>efficient</strong> as possible and making as
+            <strong>easy</strong> as possible for the user to use the app.
+          </p>
+        </div>
+        <div v-else class="description">
+          <p>
+            I mostly use
+            <strong class="skill">Ruby on Rails</strong> using
+            <strong class="skill">PostgreSQl</strong> or
+            <strong class="skill">MySQL</strong> as database.
+          </p>
+        </div>
+        <div class="flip" tabindex="0">- flip -</div>
       </div>
     </transition>
   </div>
@@ -41,7 +76,7 @@ export default {
     },
 
     skillsTitle() {
-      return `${this.showingFront ? "Front" : "Back"}-end skills and tools`;
+      return `My ${this.showingFront ? "front" : "back"} end toolbox`;
     }
   }
 };
@@ -49,14 +84,22 @@ export default {
 
 <style lang="scss">
 #skills {
-  background: $grey;
-  // padding: 1rem 2rem 0;
+  width: 80%;
+  justify-self: center;
 
   & > .wrapper {
     padding: 1em;
-    text-align: center;
+    border-radius: 0.5em;
     height: 100%;
     margin: auto;
+
+    &:hover {
+      cursor: pointer;
+
+      .flip {
+        filter: brightness(120%);
+      }
+    }
   }
 
   .title {
@@ -64,7 +107,7 @@ export default {
   }
 
   .front {
-    background: $white;
+    background: $grey-lightest;
   }
 
   .back {
@@ -72,13 +115,9 @@ export default {
     color: $grey-light;
   }
 
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-
   .flip {
-    padding: 1em;
+    padding: 0.5em;
+    text-align: end;
   }
 }
 </style>

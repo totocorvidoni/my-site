@@ -3,8 +3,8 @@
     <header-comp/>
     <nav-comp/>
     <hero-comp/>
-    <about-comp/>
-    <skills-comp/>
+    <!-- <about-comp/> -->
+    <!-- <skills-comp/> -->
     <projects-comp/>
   </div>
 </template>
@@ -45,13 +45,13 @@ html {
 #app {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 100vh auto auto auto;
+  grid-template-rows: auto auto auto auto;
   grid-template-areas:
     "hero     hero     hero     hero"
     "about    about    about   about"
     "skills    skills    skills   skills"
     "projects projects projects projects";
-  justify-items: center;
+  // justify-items: center;
   font-family: $base-font;
   color: $grey;
 }
@@ -64,17 +64,17 @@ html {
   grid-area: hero;
 }
 
-#about {
-  grid-area: about;
-  margin: 0 2rem;
-  max-width: 800px;
-}
+// #about {
+//   grid-area: about;
+//   margin: 0 2rem;
+//   max-width: 800px;
+// }
 
-#skills {
-  grid-area: skills;
-  margin: 0 2rem;
-  max-width: 800px;
-}
+// #skills {
+//   grid-area: skills;
+//   margin: 0 2rem;
+//   max-width: 800px;
+// }
 
 #projects {
   grid-area: projects;

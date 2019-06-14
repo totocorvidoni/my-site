@@ -1,6 +1,6 @@
 <template>
   <div id="navigator">
-    <div class="connector"></div>
+    <!-- <div class="connector"></div> -->
     <a class="node-wrapper" href="#hero">
       <div class="node"></div>
       <span class="description">to top</span>
@@ -41,7 +41,7 @@ export default {
   .node-wrapper {
     position: relative;
     display: block;
-    background: $white-darker;
+    background: $darker;
     border-radius: 50%;
     padding: 0.5em;
     margin: 0.5em 0;
@@ -50,7 +50,8 @@ export default {
     &:hover {
       cursor: pointer;
 
-      .node, .description {
+      .node,
+      .description {
         filter: brightness(120%);
       }
 
@@ -75,8 +76,9 @@ export default {
     bottom: 0;
     left: 125%;
     color: $orange;
+    font-size: 1.2em;
     font-weight: 700;
-    line-height: 2em;
+    line-height: 1.8em;
     white-space: nowrap;
     transition: $link;
 
@@ -90,7 +92,7 @@ export default {
     right: 0;
     bottom: 1em;
     left: 0;
-    background: $white-darker;
+    background: $darker;
     width: 0.5em;
     margin: 0 auto;
     z-index: 5;

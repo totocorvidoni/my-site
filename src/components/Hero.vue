@@ -1,25 +1,28 @@
 <template>
   <div id="hero">
-    <h1 class="big">Hi,</h1>
-    <h2>I'm a full-stack web developer.</h2>
-    <h3 class="likes">I enjoy...</h3>
-    <item-runner
-      :items="likes"
-      :delay="1500"
-      :loops="20"
-    >coding efficient and intuitive apps for the user.</item-runner>
+    <div class="hello">
+      <h1 class="biggest">Hi, I'm Tomás</h1>
+      <h2 class="big">Self-taught full stack web developer.</h2>
+      <item-runner
+        :items="likes"
+        :delay="5000"
+        :loops="10"
+      >coding efficient and intuitive apps for the user.</item-runner>
+    </div>
+    <skills-comp/>
   </div>
 </template>
 
 <script>
 import ItemRunner from "@/components/ItemRunner.vue";
+import SkillsComp from "@/components/Skills.vue";
 
 export default {
   name: "hero-comp",
-  components: { ItemRunner },
+  components: { ItemRunner, SkillsComp },
   data() {
     return {
-      likes: ["efficent code", "simple designs", "snappy performance"]
+      likes: ["And I love building stuff.", "I like ", "The notion that "]
     };
   }
 };
@@ -28,26 +31,34 @@ export default {
 <style lang="scss">
 #hero {
   display: grid;
-  grid-gap: 0.5em;
-  align-content: center;
-  justify-items: center;
+  grid-gap: 2em;
+  grid-template-columns: 1fr 1fr;
+  // grid-template-rows: 1fr 1fr;
+  grid-gap: 0.25em;
+  align-items: center;
+  // justify-items: center;
+  padding: 2em 0;
+  max-width: 1500px;
+  min-height: 100vh;
 
-  .big {
-    font-size: 5em;
+  .hello {
+    // align-self: center;
+    grid-column: 1;
+    text-align: end;
+  }
+
+  .biggest {
+    font-size: 3em;
     margin: 0;
   }
 
-  .likes {
-    margin-top: 3em;
-    color: $green;
+  .big {
+    font-weight: 400;
+    margin: 0;
   }
 
-  h1,
-  h2,
-  h3,
-  p {
-    margin-top: 0;
-    margin-bottom: 0;
+  #skills {
+    grid-column: 2;
   }
 }
 </style>

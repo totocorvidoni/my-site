@@ -36,7 +36,7 @@ export default {
 
       if (index < this.items.length - 1) {
         // caps looping speeed at 50ms.
-        const nextDelay = delay <= 50 ? 50 : delay / 1.2;
+        const nextDelay = delay <= 50 ? 50 : delay / 1.5;
         setTimeout(() => {
           this.itemStep(index + 1, nextDelay, loops, currentLoop);
         }, delay);
@@ -58,14 +58,15 @@ export default {
 .wrapper {
   position: relative;
   width: 100%;
+  height: 1em;
+  margin: 0.25em 0;
 
-  p {
+  .item {
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    text-align: center;
     text-transform: capitalize;
+    right: 0;
+    color: $green;
+    margin: 0;
   }
 }
 

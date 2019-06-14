@@ -34,7 +34,7 @@ export default {
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, 300px);
     grid-template-rows: auto;
-    grid-auto-rows: 30rem;
+    grid-auto-rows: 32rem;
     justify-content: center;
     color: $white;
     margin: 0 auto;

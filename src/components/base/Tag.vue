@@ -17,7 +17,7 @@ export default {
   color: $white;
   padding: 0.25em 0.5em;
   border-radius: 0.5em;
-  margin: 0 0.12em;
+  margin: 0.12em;
   font-size: 0.8em;
   white-space: nowrap;
 }
