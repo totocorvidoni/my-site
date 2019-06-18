@@ -1,16 +1,16 @@
 <template>
   <div id="hero">
     <div class="hello">
-      <h1 class="biggest">
-        Hello!
-        <br>My name is Tomás
-      </h1>
-      <h2 class="big">and I am a full stack web developer</h2>
+      <div class="biggest">
+        <h2>Welcome!</h2>
+        <h1>My name is Tomás</h1>
+      </div>
+      <h2 class="big">Full Stack Web Developer</h2>
       <item-runner
-        :items="likes"
-        :delay="2000"
+        :items="trivia"
+        :delay="2500"
         :loops="4"
-      >Just a guy trying to make the internet more of an awesome place.</item-runner>
+      >Just a guy trying to make the web a more awesome of a place.</item-runner>
     </div>
     <skills-comp/>
   </div>
@@ -25,15 +25,15 @@ export default {
   components: { ItemRunner, SkillsComp },
   data() {
     return {
-      likes: [
+      trivia: [
         "Let me tell you a little about me...",
-        "Self-thought developer",
-        "Living in Argentina",
-        "Who also graduated in Advertising.",
+        "Self-thought developer,",
+        "Living in Argentina,",
+        "Advertising graduate,",
         "Very detail oriented,",
-        "I Love clean code,",
-        "People enjoing my apps,",
-        "Keeping things simple,",
+        "I love clean code,",
+        "People enjoying my apps",
+        "Preffer things simple,",
         "Polished,",
         "Elegant,",
         "Responsive,",
@@ -63,9 +63,18 @@ export default {
   }
 
   .biggest {
-    font-size: 3em;
-    margin: 0;
+    font-size: 1.5em;
     text-align: end;
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    h2 {
+      color: $grey-light;
+      font-weight: 400;
+    }
   }
 
   .big {

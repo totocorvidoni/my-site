@@ -24,13 +24,14 @@
           <p>
             I also have also worked on projects using
             <strong class="skill">React</strong> and
-            <strong class="skill">Wordpress</strong>
+            <strong class="skill">Wordpress</strong>.
           </p>
           <p>
-            My main focus when developing are keeping the codebase
+            My main focus when developing is keeping the codebase as
             <strong>organized</strong> and
-            <strong>efficient</strong> as possible and making as
-            <strong>easy</strong> as possible for the user to use the app.
+            <strong>efficient</strong> as possible while making sure the end product is
+            <strong>easy</strong> and
+            <strong>enjoyable</strong> for people to use.
           </p>
         </div>
         <div v-else class="description">
@@ -40,8 +41,19 @@
             <strong class="skill">PostgreSQl</strong> or
             <strong class="skill">MySQL</strong> as database.
           </p>
+
+          <p>Usually I preffer setting the back end as an API for front end apps to use. But there are always exceptions where it makes more sense to focus the action on the server.</p>
+
+          <p>
+            Although my main framework is
+            <strong class="skill">Rails</strong> I am open to alternatives. I'm currently learning
+            <strong class="skill">Node.js</strong> with
+            <strong class="skill">Express</strong> and I have even used
+            <strong class="skill">Wordpress's REST API</strong> as the back end of a
+            <strong class="skill">Vue</strong> based online store.
+          </p>
         </div>
-        <div class="flip" tabindex="0">- flip -</div>
+        <div class="flip" tabindex="0">- click to flip -</div>
       </div>
     </transition>
   </div>
@@ -76,7 +88,7 @@ export default {
     },
 
     skillsTitle() {
-      return `My ${this.showingFront ? "front" : "back"} end toolbox`;
+      return `${this.showingFront ? "Front" : "Back"} end toolbox`;
     }
   }
 };
@@ -118,7 +130,7 @@ export default {
 
   .flip {
     padding: 0.5em;
-    text-align: end;
+    text-align: center;
   }
 }
 </style>
