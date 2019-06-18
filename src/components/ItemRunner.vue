@@ -1,9 +1,21 @@
 <template>
   <div class="wrapper">
     <transition name="slide">
-      <p class="item" v-if="showMessage" key="message">
-        <slot/>
-      </p>
+      <div
+        class="finish-message"
+        v-if="finish"
+        key="message"
+        @mouseover="hovering = true"
+        @mouseleave="hovering = false"
+        @click="onFinishClick"
+      >
+        <transition name="slide">
+          <p class="item rewind" v-if="hovering" key="rewind">⏮ Rewind?</p>
+          <p class="item" v-else key="finish">
+            <slot/>
+          </p>
+        </transition>
+      </div>
       <p class="item" v-else :key="activeItem">{{ items[activeItem] }}</p>
     </transition>
   </div>
@@ -20,13 +32,14 @@ export default {
   data() {
     return {
       activeItem: 0,
-      showMessage: false
+      finish: false,
+      hovering: false
     };
   },
 
   methods: {
     // Messages will keep looping increasigly faster until currentLoop == loops,
-    // at which point the final message will be displayed.
+    // at which point the finish message will be displayed.
     itemStep(index, delay, loops, currentLoop = 0) {
       this.activeItem = index;
       if (index == this.items.length - 1 && currentLoop != loops) {
@@ -41,14 +54,21 @@ export default {
           this.itemStep(index + 1, nextDelay, loops, currentLoop);
         }, delay);
       } else {
-        this.showMessage = true;
+        this.finish = true;
       }
+    },
+
+    onFinishClick() {
+      this.finish = false;
+      this.$nextTick(() => {
+        this.itemStep(0, this.delay, this.loops);
+      });
     }
   },
 
   mounted() {
     setTimeout(() => {
-      this.itemStep(this.activeItem, this.delay, this.loops);
+      this.itemStep(0, this.delay, this.loops);
     }, 1000);
   }
 };
@@ -63,10 +83,24 @@ export default {
 
   .item {
     position: absolute;
-    text-transform: capitalize;
     right: 0;
     color: $green;
     margin: 0;
+    text-align: end;
+  }
+
+  .finish-message {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .rewind {
+    font-weight: 700;
   }
 }
 
@@ -76,12 +110,12 @@ export default {
 }
 
 .slide-enter {
-  transform: translateX(25%);
+  transform: translateX(75px);
   opacity: 0;
 }
 
 .slide-leave-to {
-  transform: translateX(-25%);
+  transform: translateX(-75px);
   opacity: 0;
 }
 </style>
