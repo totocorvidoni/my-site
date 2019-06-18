@@ -1,13 +1,16 @@
 <template>
   <div id="hero">
     <div class="hello">
-      <h1 class="biggest">Hi, I'm Tomás</h1>
-      <h2 class="big">Self-taught full stack web developer.</h2>
+      <h1 class="biggest">
+        Hello!
+        <br>My name is Tomás
+      </h1>
+      <h2 class="big">and I am a full stack web developer</h2>
       <item-runner
         :items="likes"
-        :delay="5000"
-        :loops="10"
-      >coding efficient and intuitive apps for the user.</item-runner>
+        :delay="2000"
+        :loops="4"
+      >Just a guy trying to make the internet more of an awesome place.</item-runner>
     </div>
     <skills-comp/>
   </div>
@@ -22,7 +25,21 @@ export default {
   components: { ItemRunner, SkillsComp },
   data() {
     return {
-      likes: ["And I love building stuff.", "I like ", "The notion that "]
+      likes: [
+        "Let me tell you a little about me...",
+        "Self-thought developer",
+        "Living in Argentina",
+        "Who also graduated in Advertising.",
+        "Very detail oriented,",
+        "I Love clean code,",
+        "People enjoing my apps,",
+        "Keeping things simple,",
+        "Polished,",
+        "Elegant,",
+        "Responsive,",
+        "Snappy,",
+        "Fun"
+      ]
     };
   }
 };
@@ -33,16 +50,14 @@ export default {
   display: grid;
   grid-gap: 2em;
   grid-template-columns: 1fr 1fr;
-  // grid-template-rows: 1fr 1fr;
   grid-gap: 0.25em;
   align-items: center;
-  // justify-items: center;
   padding: 2em 0;
+  margin: 0 auto;
   max-width: 1500px;
   min-height: 100vh;
 
   .hello {
-    // align-self: center;
     grid-column: 1;
     text-align: end;
   }
@@ -50,6 +65,7 @@ export default {
   .biggest {
     font-size: 3em;
     margin: 0;
+    text-align: end;
   }
 
   .big {
