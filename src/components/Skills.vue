@@ -92,6 +92,7 @@ export default {
     border-radius: 0.5em;
     height: 100%;
     margin: auto;
+    transition: all 200ms $rubber-band;
 
     &:hover {
       cursor: pointer;
