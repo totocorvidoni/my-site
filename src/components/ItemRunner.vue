@@ -49,7 +49,7 @@ export default {
 
       if (index < this.items.length - 1) {
         // caps looping speeed at 50ms.
-        const nextDelay = delay <= 50 ? 50 : delay / 1.5;
+        const nextDelay = delay <= 50 ? 50 : delay / 1.3;
         setTimeout(() => {
           this.itemStep(index + 1, nextDelay, loops, currentLoop);
         }, delay);
@@ -69,7 +69,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.itemStep(0, this.delay, this.loops);
-    }, 1000);
+    }, 3000);
   }
 };
 </script>
