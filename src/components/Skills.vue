@@ -64,21 +64,7 @@ export default {
   name: "skills-comp",
   data() {
     return {
-      showingFront: true,
-      front: [
-        { name: "Vue.js" },
-        { name: "Vanilla Javascript" },
-        { name: "HTML" },
-        { name: "CSS + Sass" },
-        { name: "Webpack" }
-      ],
-
-      back: [
-        { name: "Rails" },
-        { name: "Ruby" },
-        { name: "PostgreSQl" },
-        { name: "MySql" }
-      ]
+      showingFront: true
     };
   },
 
@@ -104,13 +90,14 @@ export default {
     border-radius: 0.5em;
     height: 100%;
     margin: auto;
-    transition: all 200ms $rubber-band;
+    // transition: box-shadow 1000ms ease;
 
     &:hover {
       cursor: pointer;
 
       .flip {
         filter: brightness(120%);
+        transform: scale(1.02);
       }
     }
   }
