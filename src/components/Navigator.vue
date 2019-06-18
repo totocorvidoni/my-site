@@ -1,69 +1,69 @@
 <template>
   <div id="navigator">
-    <!-- <div class="connector"></div> -->
-    <a class="node-wrapper" href="#hero">
+    <a v-for="link in links" :key="link.ref" class="node-wrapper" :href="link.ref">
       <div class="node"></div>
-      <span class="description">to top</span>
-    </a>
-    <a class="node-wrapper" href="#about">
-      <div class="node"></div>
-      <span class="description">about me</span>
-    </a>
-    <a class="node-wrapper" href="#skills">
-      <div class="node"></div>
-      <span class="description">my skills</span>
-    </a>
-    <a class="node-wrapper" href="#projects">
-      <div class="node"></div>
-      <span class="description">my projects</span>
-    </a>
-    <a class="node-wrapper" href="#contact">
-      <div class="node"></div>
-      <span class="description">contact me</span>
+      <span class="description">{{ link.description }}</span>
     </a>
   </div>
 </template>
 
 <script>
 export default {
-  name: "nav-comp"
+  name: "nav-comp",
+  data() {
+    return {
+      links: [
+        { ref: "#hero", description: "to top" },
+        { ref: "#projects", description: "works" },
+        { ref: "#contact", description: "contact" }
+      ]
+    };
+  }
 };
 </script>
 
 <style lang="scss">
 #navigator {
-  position: fixed;
-  top: 25%;
-  left: 0.5rem;
-  font-size: 8pt;
-  margin: auto 0;
+  position: relative;
+  display: flex;
+  font-size: 16pt;
+  margin-left: 1em;
 
   .node-wrapper {
-    position: relative;
-    display: block;
-    background: $darker;
+    display: flex;
     border-radius: 50%;
-    padding: 0.5em;
-    margin: 0.5em 0;
-    z-index: 10;
+    // margin: 0 0.25em;
+    text-decoration: none;
+
+    &:not(:last-of-type)::after {
+      content: "";
+      background: $grey-lightest;
+      line-height: 0;
+      margin: auto -0.25em;
+      height: 50%;
+      transition: $link;
+      width: 1em;
+    }
 
     &:hover {
       cursor: pointer;
 
-      .node,
       .description {
-        filter: brightness(120%);
-      }
-
-      .description {
+        margin-left: 0.25em;
         opacity: 1;
         transform: translateX(0);
+        width: 3em;
+      }
+
+      &::after {
+        content: none;
       }
     }
   }
 
   .node {
     background: $orange;
+    border: 0.25em solid $grey-lightest;
     border-radius: 50%;
     height: 1em;
     width: 1em;
@@ -71,31 +71,14 @@ export default {
   }
 
   .description {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 125%;
     color: $orange;
-    font-size: 1.2em;
     font-weight: 700;
-    line-height: 1.8em;
     white-space: nowrap;
     transition: $link;
-
+    width: 0;
     opacity: 0;
-    transform: translateX(-25%);
-  }
-
-  .connector {
-    position: absolute;
-    top: 1em;
-    right: 0;
-    bottom: 1em;
-    left: 0;
-    background: $darker;
-    width: 0.5em;
-    margin: 0 auto;
-    z-index: 5;
+    text-align: start;
+    transform: translateX(-50%);
   }
 }
 </style>

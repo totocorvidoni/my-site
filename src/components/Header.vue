@@ -1,5 +1,6 @@
 <template>
   <div id="header">
+    <nav-comp/>
     <p>Want me to make something awesome for you?</p>
     <a
       href="mailto:totocorvidoni@gmail.com"
@@ -10,8 +11,11 @@
 </template>
 
 <script>
+import NavComp from "@/components/Navigator.vue";
+
 export default {
-  name: "nav-comp"
+  name: "header-comp",
+  components: { NavComp }
 };
 </script>
 
@@ -33,8 +37,10 @@ export default {
   font-size: 0.7em;
 
   & > p {
+    flex-grow: 2;
     margin: 0 0.5em 0 0;
     font-style: italic;
+    margin: auto 0;
   }
 
   & > a {
@@ -42,6 +48,7 @@ export default {
     transition: $link;
     color: $orange;
     text-decoration: none;
+    margin: auto 0 auto 0.25em;
 
     &:visited {
       color: $orange;

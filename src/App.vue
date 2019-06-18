@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <header-comp/>
-    <nav-comp/>
     <hero-comp/>
     <!-- <about-comp/> -->
     <!-- <skills-comp/> -->
@@ -11,7 +10,6 @@
 
 <script>
 import HeaderComp from "@/components/Header.vue";
-import NavComp from "@/components/Navigator.vue";
 import HeroComp from "@/components/Hero.vue";
 import AboutComp from "@/components/About.vue";
 import SkillsComp from "@/components/Skills.vue";
@@ -21,7 +19,6 @@ export default {
   name: "app",
   components: {
     HeaderComp,
-    NavComp,
     HeroComp,
     AboutComp,
     SkillsComp,

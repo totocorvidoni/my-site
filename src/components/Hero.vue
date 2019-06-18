@@ -10,9 +10,10 @@
         :items="trivia"
         :delay="2500"
         :loops="4"
-      >Just a guy trying to make the web a more awesome of a place.</item-runner>
+      >Just a guy trying to make the web a little bit more awesome.</item-runner>
     </div>
     <skills-comp/>
+    <a class="to-projects link" href="#projects">Check out some of my Works ↓</a>
   </div>
 </template>
 
@@ -29,10 +30,10 @@ export default {
         "Let me tell you a little about me...",
         "Self-thought developer,",
         "Living in Argentina,",
-        "Advertising graduate,",
+        "Graduated in Advertising,",
         "Very detail oriented,",
         "I love clean code,",
-        "People enjoying my apps",
+        "People enjoying my apps,",
         "Preffer things simple,",
         "Polished,",
         "Elegant,",
@@ -84,6 +85,21 @@ export default {
 
   #skills {
     grid-column: 2;
+  }
+
+  .to-projects {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    color: $orange;
+    font-size: 0.75em;
+    text-decoration: none;
+    transition: $link;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(120%);
+    }
   }
 }
 </style>
