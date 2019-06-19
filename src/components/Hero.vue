@@ -10,7 +10,7 @@
         :items="trivia"
         :delay="2500"
         :loops="4"
-      >Trying to make the web a little bit more awesome.</item-runner>
+      >Trying to make the web a little bit more awesome</item-runner>
       <div class="links">
         <a
           href="https://github.com/totocorvidoni"
