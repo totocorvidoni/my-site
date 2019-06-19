@@ -61,18 +61,6 @@ html {
   grid-area: hero;
 }
 
-// #about {
-//   grid-area: about;
-//   margin: 0 2rem;
-//   max-width: 800px;
-// }
-
-// #skills {
-//   grid-area: skills;
-//   margin: 0 2rem;
-//   max-width: 800px;
-// }
-
 #projects {
   grid-area: projects;
 }

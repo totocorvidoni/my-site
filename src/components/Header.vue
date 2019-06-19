@@ -33,8 +33,9 @@ export default {
   z-index: 100;
   text-align: end;
   border-right: 4px solid $orange;
+  border-left: 4px solid $orange;
   color: $grey-light;
-  font-size: 0.7em;
+  font-size: 0.8em;
 
   & > p {
     flex-grow: 2;
