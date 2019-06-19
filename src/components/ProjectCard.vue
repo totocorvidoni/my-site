@@ -33,7 +33,7 @@
             <div class="link-text">Visit Site</div>
           </a>
           <a :href="links.repo" target="_blank" rel="nooppener norefferer" class="link">
-            <img src="@/assets/images/github-brands.svg" alt="GitHub Logo" class="icon">
+            <octicon name="mark-github" class="icon"/>
             <div class="link-text">Source Code</div>
           </a>
         </div>
@@ -44,14 +44,17 @@
 </template>
 
 <script>
+import BaseTag from "@/components/base/Tag.vue";
+
+import Octicon from "vue-octicon/components/Octicon.vue";
+import "vue-octicon/icons/mark-github";
+
 import VuePureLightbox from "vue-pure-lightbox";
 import styles from "@/scss/lightbox.scss";
 
-import BaseTag from "@/components/base/Tag.vue";
-
 export default {
   name: "project-card",
-  components: { VuePureLightbox, BaseTag },
+  components: { VuePureLightbox, BaseTag, Octicon },
   props: {
     name: String,
     links: Object,
@@ -183,9 +186,10 @@ export default {
 
   .icon {
     display: block;
-    margin: 0 auto;
+    color: $orange;
     height: 32px;
     width: 32px;
+    margin: 0 auto;
   }
 
   .link-text {

@@ -10,20 +10,45 @@
         :items="trivia"
         :delay="2500"
         :loops="4"
-      >Just a guy trying to make the web a little bit more awesome.</item-runner>
+      >Trying to make the web a little bit more awesome.</item-runner>
+      <div class="links">
+        <a
+          href="https://github.com/totocorvidoni"
+          target="_blank"
+          rel="nooppener norefferer"
+          class="link"
+        >
+          <octicon name="mark-github" class="icon"/>
+          <span class="link-text">GitHub Profile</span>
+        </a>
+        <a
+          href="https://github.com/totocorvidoni/my-site"
+          target="_blank"
+          rel="nooppener norefferer"
+          class="link"
+        >
+          <octicon name="repo" class="icon"/>
+          <span class="link-text">Project Repository</span>
+        </a>
+      </div>
     </div>
     <skills-comp/>
-    <a class="to-projects link" href="#projects">Check out some of my Works ↓</a>
+    <a class="to-projects" href="#projects">Check out some of my Works ↓</a>
   </div>
 </template>
 
 <script>
 import ItemRunner from "@/components/ItemRunner.vue";
 import SkillsComp from "@/components/Skills.vue";
+import Octicon from "vue-octicon/components/Octicon.vue";
+
+import "vue-octicon/icons/repo";
+import "vue-octicon/icons/mark-github";
+import "vue-octicon/icons/logo-github";
 
 export default {
   name: "hero-comp",
-  components: { ItemRunner, SkillsComp },
+  components: { ItemRunner, SkillsComp, Octicon },
   data() {
     return {
       trivia: [
@@ -48,6 +73,7 @@ export default {
 
 <style lang="scss">
 #hero {
+  position: relative;
   display: grid;
   grid-gap: 2em;
   grid-template-columns: 1fr 1fr;
@@ -85,6 +111,44 @@ export default {
 
   #skills {
     grid-column: 2;
+    grid-row: 1 / -1;
+  }
+
+  .links {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 0.25em;
+    justify-content: end;
+    margin-top: 0.5em;
+  }
+
+  .link {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 0.5em;
+    place-items: center;
+    place-content: center;
+    background: $orange;
+    border-radius: 0.25em;
+    font-size: 0.7em;
+    padding: 0.5em;
+    text-decoration: none;
+    transition: $link;
+
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+
+  .icon {
+    color: $white;
+    height: 100%;
+    width: auto;
+  }
+
+  .link-text {
+    color: $white;
+    font-weight: 700;
   }
 
   .to-projects {
@@ -98,7 +162,7 @@ export default {
 
     &:hover {
       cursor: pointer;
-      filter: brightness(120%);
+      filter: brightness(110%);
     }
   }
 }
