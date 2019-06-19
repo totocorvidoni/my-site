@@ -60,9 +60,7 @@ export default {
 
     onFinishClick() {
       this.finish = false;
-      this.$nextTick(() => {
-        this.itemStep(0, this.delay, this.loops);
-      });
+      this.itemStep(0, this.delay, this.loops);
     }
   },
 
@@ -78,7 +76,7 @@ export default {
 .wrapper {
   position: relative;
   width: 100%;
-  height: 1em;
+  height: 2em;
   margin: 0.25em 0;
 
   .item {
