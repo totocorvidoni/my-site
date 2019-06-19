@@ -96,7 +96,7 @@ export default {
       cursor: pointer;
 
       .flip {
-        filter: brightness(120%);
+        filter: brightness(110%);
         transform: scale(1.02);
       }
     }

@@ -1,7 +1,7 @@
 <template>
   <div id="projects">
     <div class="project-grid">
-      <h2 class="title">Some of my projects</h2>
+      <h2 class="title">Projects</h2>
       <project-card v-for="project in projects" :key="project.name" v-bind="project"/>
     </div>
   </div>
@@ -44,6 +44,11 @@ export default {
     & > .title {
       grid-column: 1 / -1;
       text-align: center;
+      color: $grey-lightest;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 2em;
+      // margin: 0.5em;
     }
   }
 }

@@ -86,7 +86,7 @@ html {
   &:hover,
   &:focus {
     cursor: pointer;
-    filter: brightness(120%);
+    filter: brightness(110%);
   }
 
   &:focus {

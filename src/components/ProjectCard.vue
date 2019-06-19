@@ -177,7 +177,7 @@ export default {
     transition: $link;
 
     &:hover {
-      filter: brightness(120%);
+      filter: brightness(110%);
     }
   }
 

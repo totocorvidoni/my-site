@@ -67,6 +67,7 @@ export default {
     border-radius: 50%;
     height: 1em;
     width: 1em;
+    margin: auto 0;
     transition: $link;
   }
 
