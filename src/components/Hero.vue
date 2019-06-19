@@ -79,14 +79,16 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.25em;
   align-items: center;
-  padding: 2em 0;
+  background: linear-gradient(45deg, $background-gradient),
+    linear-gradient(135deg, $background-gradient);
   margin: 0 auto;
-  max-width: 1500px;
   min-height: 100vh;
+  padding: 2em 0;
 
   .hello {
     grid-column: 1;
     text-align: end;
+    max-width: 1500px;
   }
 
   .biggest {
@@ -154,9 +156,12 @@ export default {
   .to-projects {
     position: absolute;
     bottom: 1em;
-    left: 1em;
+    right: 1em;
+    background: $white;
+    border-radius: 0.25em;
     color: $orange;
     font-size: 0.75em;
+    padding: 0.25em;
     text-decoration: none;
     transition: $link;
 
