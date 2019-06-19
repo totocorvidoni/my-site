@@ -10,7 +10,9 @@
         @click="onFinishClick"
       >
         <transition name="slide">
-          <p class="item rewind" v-if="hovering" key="rewind">⏮ Rewind?</p>
+          <p class="item rewind" v-if="hovering" key="rewind">
+            <img src="@/assets/images/rewind.svg" class="rewind-icon"> Rewind?
+          </p>
           <p class="item" v-else key="finish">
             <slot/>
           </p>
@@ -99,6 +101,13 @@ export default {
 
   .rewind {
     font-weight: 700;
+    display: flex;
+  }
+
+  .rewind-icon {
+    margin: 0 0.25em;
+    height: 24px;
+    width: 24px;
   }
 }
 
