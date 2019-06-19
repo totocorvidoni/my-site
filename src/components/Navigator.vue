@@ -73,9 +73,9 @@ export default {
 
   .description {
     color: $orange;
-    font-weight: 700;
     white-space: nowrap;
     transition: $link;
+
     width: 0;
     opacity: 0;
     text-align: start;
