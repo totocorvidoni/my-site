@@ -95,7 +95,6 @@ export default {
 
   .contact-form {
     display: grid;
-    grid-template-columns: auto 1fr;
     grid-column-gap: 1em;
     grid-row-gap: 1.5em;
     justify-content: center;
@@ -153,11 +152,20 @@ export default {
     }
 
     label[for="name"] {
+      grid-area: name;
       text-align: end;
     }
 
+    label[for="email"] {
+      grid-area: email;
+    }
+
+    label[for="email-confirm"] {
+      grid-area: email-confirm;
+    }
+
     .message {
-      grid-column: 1 / -1;
+      grid-area: message;
       display: flex;
       flex-flow: column;
     }
