@@ -1,59 +1,67 @@
 <template>
   <div id="contact">
-    <h2 class="title">Let's talk!</h2>
-    <p>
-      Do you have any project or idea that needs my help? Send me an email directly at
-      <a
-        href="mailto:totocorvidoni@gmail.com"
-        target="_blank"
-        rel="nooppener norefferer"
-        class="link"
-      >totocorvidoni@gmail.com</a> or using the form below and we will build something great.
-    </p>
-    <form class="contact-form">
-      <div class="small-fields">
-        <div class="field">
-          <label for="name" class="small-label">Name</label>
-          <input type="text" id="name" name="name" v-validate="'alpha_spaces|required'">
-          <transition name="slide">
-            <span class="error-msg" :key="nameError">{{ nameError }}</span>
-          </transition>
+    <div class="wrapper">
+      <h2 class="title">Let's talk!</h2>
+      <p>
+        Do you have any project or idea that needs my help? Send me an email directly at
+        <a
+          href="mailto:totocorvidoni@gmail.com"
+          target="_blank"
+          rel="nooppener norefferer"
+          class="link"
+        >totocorvidoni@gmail.com</a> or using the form below and we will build something great.
+      </p>
+      <form class="contact-form">
+        <div class="small-fields">
+          <div class="field">
+            <label for="name" class="small-label">Name</label>
+            <input type="text" id="name" name="name" v-validate="'alpha_spaces|required'" required>
+            <transition name="slide">
+              <span class="error-msg" :key="nameError">{{ nameError }}</span>
+            </transition>
+          </div>
+
+          <div class="field">
+            <label for="email" class="small-label">Email</label>
+            <input
+              type="mail"
+              id="email"
+              name="email"
+              v-validate="'email|required'"
+              required
+              ref="email"
+            >
+            <transition name="slide">
+              <span class="error-msg" :key="emailError">{{ emailError }}</span>
+            </transition>
+          </div>
+
+          <div class="field">
+            <label for="email-confirm" class="small-label">Email Confirm</label>
+            <input
+              type="email"
+              id="email-confirm"
+              name="email confirm"
+              v-validate="'email|required|confirmed:email'"
+              required
+            >
+            <transition name="slide">
+              <span class="error-msg" :key="emailConfirmError">{{ emailConfirmError }}</span>
+            </transition>
+          </div>
         </div>
 
-        <div class="field">
-          <label for="email" class="small-label">Email</label>
-          <input type="mail" id="email" name="email" v-validate="'email|required'" ref="email">
-          <transition name="slide">
-            <span class="error-msg" :key="emailError">{{ emailError }}</span>
-          </transition>
-        </div>
-
-        <div class="field">
-          <label for="email-confirm" class="small-label">Email Confirm</label>
-          <input
-            type="email"
-            id="email-confirm"
-            name="email confirm"
-            v-validate="'email|required|confirmed:email'"
-          >
-          <transition name="slide">
-            <span class="error-msg" :key="emailConfirmError">{{ emailConfirmError }}</span>
-          </transition>
-        </div>
-      </div>
-
-      <div class="message">
-        <label for="msg">What is your message?</label>
-        <div class="field">
-          <textarea id="msg" name="msg" rows="10" v-validate="'required'"></textarea>
+        <div class="message">
+          <label for="msg">Your message</label>
+          <textarea id="msg" name="msg" rows="12" v-validate="'required'" required></textarea>
           <transition name="slide">
             <span class="error-msg bottom" :key="messageError">{{ messageError }}</span>
           </transition>
         </div>
-      </div>
 
-      <input type="submit" value="send!">
-    </form>
+        <input type="submit" id="submit" name="submit" :value="submitMsg" :disabled="errors.any()">
+      </form>
+    </div>
   </div>
 </template>
 
@@ -76,6 +84,10 @@ export default {
 
     messageError() {
       return this.errors.first("msg");
+    },
+
+    submitMsg() {
+      return this.errors.any() ? "Verify!" : "Send";
     }
   }
 };
@@ -83,12 +95,14 @@ export default {
 
 <style lang='scss'>
 #contact {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  background: linear-gradient(45deg, $background-gradient),
+    linear-gradient(135deg, $background-gradient);
+
+  & > .wrapper {
+    padding: 2rem;
+    width: 80%;
+    margin: 0 auto;
+  }
 
   .title {
     margin: 0;
@@ -98,10 +112,8 @@ export default {
   .contact-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1em;
-    grid-row-gap: 1.5em;
+    grid-gap: 1em;
     align-items: center;
-    padding: 1em 0 2em;
     margin-top: 1em;
     text-align: end;
 
@@ -111,19 +123,16 @@ export default {
     }
 
     label {
+      display: block;
       color: $grey-light;
       font-weight: 700;
+      padding: 0.25em;
       transition: all 200ms ease;
 
       &:hover {
         cursor: pointer;
         filter: brightness(110%);
       }
-    }
-
-    .small-label {
-      display: block;
-      padding: 0.25em;
     }
 
     input,
@@ -164,21 +173,22 @@ export default {
     }
 
     .message {
+      position: relative;
       display: flex;
       flex-flow: column;
+      margin-bottom: 0.5em;
     }
 
     label[for="msg"] {
       text-align: center;
-      margin-bottom: 0.5em;
     }
 
-    textarea {
+    #msg {
       padding: 0.25em;
     }
 
-    input[type="submit"] {
-      grid-column: 1 / -1;
+    #submit {
+      grid-column: -2;
       justify-self: center;
       background: $green;
       border: none;
@@ -187,6 +197,28 @@ export default {
       text-transform: uppercase;
       font-weight: 700;
       padding: 0.5em;
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(110%);
+      }
+
+      &:active {
+        filter: brightness(90%);
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &:disabled {
+        background: $grey-lightest;
+
+        &:hover {
+          cursor: not-allowed;
+          filter: none;
+        }
+      }
     }
   }
 
