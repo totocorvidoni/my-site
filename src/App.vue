@@ -72,7 +72,7 @@ html {
     filter: brightness(110%);
     text-decoration: underline;
   }
-  
+
   &:active {
     filter: brightness(90%);
   }
@@ -93,5 +93,20 @@ html {
 .flip-enter-to,
 .flip-leave {
   transform: scale(1, 1);
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 150ms $rubber-band;
+}
+
+.slide-enter {
+  transform: translateX(75px);
+  opacity: 0;
+}
+
+.slide-leave-to {
+  transform: translateX(-75px);
+  opacity: 0;
 }
 </style>

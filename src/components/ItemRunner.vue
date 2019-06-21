@@ -110,19 +110,4 @@ export default {
     width: 24px;
   }
 }
-
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 150ms $rubber-band;
-}
-
-.slide-enter {
-  transform: translateX(75px);
-  opacity: 0;
-}
-
-.slide-leave-to {
-  transform: translateX(-75px);
-  opacity: 0;
-}
 </style>
