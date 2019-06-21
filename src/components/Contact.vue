@@ -11,39 +11,41 @@
       >totocorvidoni@gmail.com</a> or using the form below and we will build something great.
     </p>
     <form class="contact-form">
-      <label for="name">Name:</label>
-      <div class="field">
-        <input type="text" id="name" name="name" v-validate="'alpha_spaces|required'">
-        <transition name="slide">
-          <span class="error-msg" :key="nameError">{{ nameError }}</span>
-        </transition>
-      </div>
+      <div class="small-fields">
+        <div class="field">
+          <label for="name" class="small-label">Name</label>
+          <input type="text" id="name" name="name" v-validate="'alpha_spaces|required'">
+          <transition name="slide">
+            <span class="error-msg" :key="nameError">{{ nameError }}</span>
+          </transition>
+        </div>
 
-      <label for="email">Email:</label>
-      <div class="field">
-        <input type="mail" id="email" name="email" v-validate="'email|required'" ref="email">
-        <transition name="slide">
-          <span class="error-msg" :key="emailError">{{ emailError }}</span>
-        </transition>
-      </div>
+        <div class="field">
+          <label for="email" class="small-label">Email</label>
+          <input type="mail" id="email" name="email" v-validate="'email|required'" ref="email">
+          <transition name="slide">
+            <span class="error-msg" :key="emailError">{{ emailError }}</span>
+          </transition>
+        </div>
 
-      <label for="email-confirm">Email Confirm:</label>
-      <div class="field">
-        <input
-          type="email"
-          id="email-confirm"
-          name="email confirm"
-          v-validate="'email|required|confirmed:email'"
-        >
-        <transition name="slide">
-          <span class="error-msg" :key="emailConfirmError">{{ emailConfirmError }}</span>
-        </transition>
+        <div class="field">
+          <label for="email-confirm" class="small-label">Email Confirm</label>
+          <input
+            type="email"
+            id="email-confirm"
+            name="email confirm"
+            v-validate="'email|required|confirmed:email'"
+          >
+          <transition name="slide">
+            <span class="error-msg" :key="emailConfirmError">{{ emailConfirmError }}</span>
+          </transition>
+        </div>
       </div>
 
       <div class="message">
         <label for="msg">What is your message?</label>
         <div class="field">
-          <textarea id="msg" name="msg" cols="30" rows="10" v-validate="'required'"></textarea>
+          <textarea id="msg" name="msg" rows="10" v-validate="'required'"></textarea>
           <transition name="slide">
             <span class="error-msg bottom" :key="messageError">{{ messageError }}</span>
           </transition>
@@ -95,27 +97,33 @@ export default {
 
   .contact-form {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 1em;
     grid-row-gap: 1.5em;
-    justify-content: center;
+    align-items: center;
     padding: 1em 0 2em;
     margin-top: 1em;
     text-align: end;
 
     .field {
       position: relative;
+      margin-bottom: 1em;
     }
 
     label {
       color: $grey-light;
       font-weight: 700;
       transition: all 200ms ease;
-      margin: auto 0;
 
       &:hover {
         cursor: pointer;
         filter: brightness(110%);
       }
+    }
+
+    .small-label {
+      display: block;
+      padding: 0.25em;
     }
 
     input,
@@ -152,20 +160,10 @@ export default {
     }
 
     label[for="name"] {
-      grid-area: name;
       text-align: end;
     }
 
-    label[for="email"] {
-      grid-area: email;
-    }
-
-    label[for="email-confirm"] {
-      grid-area: email-confirm;
-    }
-
     .message {
-      grid-area: message;
       display: flex;
       flex-flow: column;
     }
@@ -195,7 +193,7 @@ export default {
   // Validation
   .error-msg {
     position: absolute;
-    bottom: calc(100% + 0.25em);
+    top: calc(100% + 0.25em);
     left: 0.25em;
     color: $bad;
     font-size: 0.75em;
