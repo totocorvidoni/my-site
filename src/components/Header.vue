@@ -6,6 +6,7 @@
       href="mailto:totocorvidoni@gmail.com"
       target="_blank"
       rel="nooppener norefferer"
+      class="link"
     >Let's get in touch!</a>
   </div>
 </template>
@@ -44,25 +45,8 @@ export default {
     margin: auto 0;
   }
 
-  & > a {
-    color: $grey-light;
-    transition: $link;
-    color: $orange;
-    text-decoration: none;
+  & > .link {
     margin: auto 0 auto 0.25em;
-
-    &:visited {
-      color: $orange;
-    }
-
-    &:active {
-      transform: scale(0.95);
-    }
-
-    &:hover {
-      text-decoration: underline;
-      filter: brightness(1.1);
-    }
   }
 }
 </style>

@@ -82,6 +82,7 @@ html {
   }
 }
 
+  transition: $link;
 // Transitions
 
 .flip-enter-active,
