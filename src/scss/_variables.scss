@@ -14,6 +14,10 @@ $green: hsl(100, 35%, 55%);
 $darker: hsla(200, 50%, 10%, 0.5);
 $lighter: hsla(255, 100%, 100%, 0.5);
 
+$focus: hsl(185, 75%, 45%);
+$bad: hsl(0, 75%, 45%);
+$good: hsl(100, 75%, 45%);
+
 // Transition
 $rubber-band: cubic-bezier(0.3, 1.1, 0.3, 1.1);
 $link: all 200ms ease;
