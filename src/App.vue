@@ -2,27 +2,24 @@
   <div id="app">
     <header-comp/>
     <hero-comp/>
-    <!-- <about-comp/> -->
-    <!-- <skills-comp/> -->
     <projects-comp/>
+    <contact-comp/>
   </div>
 </template>
 
 <script>
 import HeaderComp from "@/components/Header.vue";
 import HeroComp from "@/components/Hero.vue";
-import AboutComp from "@/components/About.vue";
-import SkillsComp from "@/components/Skills.vue";
 import ProjectsComp from "@/components/Projects.vue";
+import ContactComp from "@/components/Contact.vue";
 
 export default {
   name: "app",
   components: {
     HeaderComp,
     HeroComp,
-    AboutComp,
-    SkillsComp,
-    ProjectsComp
+    ProjectsComp,
+    ContactComp
   }
 };
 </script>
@@ -40,29 +37,8 @@ html {
 }
 
 #app {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas:
-    "hero     hero     hero     hero"
-    "about    about    about   about"
-    "skills    skills    skills   skills"
-    "projects projects projects projects";
-  // justify-items: center;
   font-family: $base-font;
   color: $grey;
-}
-
-#header {
-  grid-area: header;
-}
-
-#hero {
-  grid-area: hero;
-}
-
-#projects {
-  grid-area: projects;
 }
 
 .flip {
@@ -82,7 +58,26 @@ html {
   }
 }
 
+.link {
+  color: $orange;
+  text-decoration: none;
   transition: $link;
+
+  &:visited {
+    color: $orange;
+  }
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(110%);
+    text-decoration: underline;
+  }
+  
+  &:active {
+    filter: brightness(90%);
+  }
+}
+
 // Transitions
 
 .flip-enter-active,
