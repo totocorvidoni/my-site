@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="item-runner">
     <transition name="slide">
       <div
         class="finish-message"
@@ -75,7 +75,7 @@ export default {
 </script>
 
 <style lang="scss">
-.wrapper {
+.item-runner {
   position: relative;
   width: 100%;
   height: 2em;
