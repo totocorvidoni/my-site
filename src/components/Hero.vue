@@ -143,6 +143,7 @@ export default {
   }
 
   .icon {
+    // FIXME - sometimes on resize icons don;t adapt to the new space.
     color: $white;
     height: 100%;
     width: auto;
