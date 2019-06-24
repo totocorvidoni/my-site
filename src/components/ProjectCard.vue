@@ -95,7 +95,7 @@ export default {
 
   .image {
     max-width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
 
     &:hover {
