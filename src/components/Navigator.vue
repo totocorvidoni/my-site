@@ -40,7 +40,7 @@ export default {
       background: $grey-lightest;
       line-height: 0;
       margin: auto -0.25em;
-      height: 50%;
+      height: 0.5em;
       transition: $link;
       width: 1em;
     }

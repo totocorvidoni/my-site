@@ -172,4 +172,22 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 770px) {
+  #hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+
+    .hello {
+      grid-column: 1 / -1;
+      grid-row: span 1;
+    }
+
+    #skills {
+      grid-column: 1 / -1;
+      grid-row: span 1;
+    }
+  }
+}
 </style>

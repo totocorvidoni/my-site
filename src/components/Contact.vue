@@ -8,8 +8,9 @@
       </div>
       <div class="wrapper" v-else key="form">
         <h2 class="title">Let's talk!</h2>
+        <p class="text">Do you have any project or idea that needs my help?</p>
         <p>
-          Do you have any project or idea that needs my help? Send me an email directly at
+          Send me an email directly at
           <a
             href="mailto:totocorvidoni@gmail.com"
             target="_blank"
@@ -174,7 +175,7 @@ export default {
     linear-gradient(135deg, $background-gradient);
 
   & > .wrapper {
-    padding: 2rem;
+    padding: 2rem 1rem;
     width: 80%;
     margin: 0 auto;
 
@@ -207,7 +208,10 @@ export default {
     }
 
     label {
-      display: block;
+      display: inline-block;
+      background: $white;
+      border-radius: 0.25em;
+      padding: 0.25em;
       color: $grey-light;
       font-weight: 700;
       padding: 0.25em;
@@ -251,13 +255,9 @@ export default {
       }
 
       &::placeholder {
-        color: $grey-lightest;
+        color: $grey-light;
         font-style: italic;
       }
-    }
-
-    label[for="name"] {
-      text-align: end;
     }
 
     .message {
@@ -268,6 +268,7 @@ export default {
     }
 
     label[for="msg"] {
+      margin: 0 auto;
       text-align: center;
     }
 
@@ -318,6 +319,13 @@ export default {
     color: $bad;
     font-size: 0.75em;
     transition: all 300ms $rubber-band;
+  }
+
+  @media screen and (max-width: 770px) {
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
   }
 }
 </style>

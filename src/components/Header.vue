@@ -1,14 +1,9 @@
 <template>
-  <div id="header">
+  <header id="header">
     <nav-comp/>
-    <p>Want me to make something awesome for you?</p>
-    <a
-      href="mailto:totocorvidoni@gmail.com"
-      target="_blank"
-      rel="nooppener norefferer"
-      class="link"
-    >Let's get in touch!</a>
-  </div>
+    <p class="tagline">Want me to make something awesome for you?</p>
+    <a href="#contact" class="link">Let's get in touch!</a>
+  </header>
 </template>
 
 <script>
@@ -38,7 +33,7 @@ export default {
   color: $grey-light;
   font-size: 0.8em;
 
-  & > p {
+  & > .tagline {
     flex-grow: 2;
     margin: 0 0.5em 0 0;
     font-style: italic;
@@ -46,7 +41,20 @@ export default {
   }
 
   & > .link {
+    flex-grow: auto;
     margin: auto 0 auto 0.25em;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  #header {
+    & > .tagline {
+      display: none;
+    }
+
+    & > .link {
+      flex-grow: 2;
+    }
   }
 }
 </style>

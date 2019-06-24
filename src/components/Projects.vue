@@ -39,7 +39,7 @@ export default {
     color: $white;
     margin: 0 auto;
     max-width: 1500px;
-    padding: 1em 3em;
+    padding: 1em;
 
     & > .title {
       grid-column: 1 / -1;
@@ -48,7 +48,6 @@ export default {
       text-transform: uppercase;
       letter-spacing: 0.25em;
       font-size: 2em;
-      // margin: 0.5em;
     }
   }
 }

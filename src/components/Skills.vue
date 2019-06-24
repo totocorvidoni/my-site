@@ -53,7 +53,7 @@
             <strong class="skill">Vue</strong> based online store.
           </p>
         </div>
-        <div class="flip" tabindex="0">- click to flip -</div>
+        <div class="flip" tabindex="0">- press to flip -</div>
       </div>
     </transition>
   </div>
