@@ -1,10 +1,10 @@
 <template>
-  <div id="navigator">
+  <nav id="navigator">
     <a v-for="link in links" :key="link.ref" class="node-wrapper" :href="link.ref">
       <div class="node"></div>
       <span class="description">{{ link.description }}</span>
     </a>
-  </div>
+  </nav>
 </template>
 
 <script>
