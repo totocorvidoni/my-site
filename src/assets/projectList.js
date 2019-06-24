@@ -6,7 +6,7 @@ export default [
       live: "https://github.com/totocorvidoni"
     },
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci?text= Iure placeat officiis maiores?text=",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta eligendi, autem tempore sed quisquam, deleniti exercitationem deserunt dolore provident rerum maxime doloribus laboriosam excepturi adipisci?text= Iure placeat officiis maiores?",
     tags: ["tag1", "tag two", "longer tag", "tag4"],
     images: [
       {
