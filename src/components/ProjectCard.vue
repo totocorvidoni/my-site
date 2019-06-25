@@ -157,31 +157,6 @@ export default {
     height: 25%;
     position: relative;
 
-    .lightbox__thumbnail {
-      & > img {
-        border: 2px solid $grey-light;
-        border-bottom: none;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: $grey-light;
-        opacity: 0.4;
-        transition: all 150ms ease;
-      }
-
-      &:hover::after {
-        opacity: 0;
-      }
-    }
-
     &:last-of-type > .lightbox__thumbnail > img {
       border-bottom: 2px solid $grey-light;
     }

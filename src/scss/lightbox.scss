@@ -52,8 +52,30 @@
   height: 100%;
 }
 
-.lightbox__thumbnail img {
-  width: 100%;
+.lightbox__thumbnail {
+  img {
+    width: 100%;
+    border: 2px solid $grey-light;
+    border-bottom: none;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, $grey-light, $black);
+    opacity: 0.3;
+    transition: all 150ms ease;
+  }
+
+  &:hover::after {
+    opacity: 0.05;
+  }
 }
 
 .lightbox__close {
@@ -72,9 +94,8 @@
 }
 .lightbox__element {
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100%;
+  padding: 2rem 0;
 }
 .lightbox__arrow,
 .lightbox__element {
@@ -103,7 +124,8 @@
 }
 .lightbox__image img {
   width: 100%;
-  height: auto !important;
+  height: 100%;
+  object-fit: contain;
 }
 @media screen and (max-width: 720px) {
   .lightbox__arrow {
