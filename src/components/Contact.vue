@@ -9,15 +9,7 @@
       <div class="wrapper" v-else key="form">
         <h2 class="title">Let's talk!</h2>
         <p class="text">Do you have any project or idea that needs my help?</p>
-        <p>
-          Send me an email directly at
-          <a
-            href="mailto:totocorvidoni@gmail.com"
-            target="_blank"
-            rel="nooppener norefferer"
-            class="link"
-          >totocorvidoni@gmail.com</a> or using the form below and we will build something great.
-        </p>
+        <p>Contact me using the form below, I will get back to you shortly and we will build something great!</p>
         <form class="contact-form" @submit.prevent="onContactSubmit">
           <div class="small-fields">
             <div class="field">
