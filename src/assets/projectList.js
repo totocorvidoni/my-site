@@ -39,7 +39,7 @@ export default [
     },
     description:
       "It lets you add books to a virtual library, allowing you to keep track of the read status. The best part of the project was figuring out how to implement all the needed features into the book cards. I wanted each element to feel natural on them and that forced me to find creative solutions for their implementations.",
-    tags: ["Books", "Vue", "CSS3", "Front End"],
+    tags: ["Books", "Vue", "Front End"],
     images: [
       {
         thumb: require("@/assets/images/projects/library/01-thumb.png"),
