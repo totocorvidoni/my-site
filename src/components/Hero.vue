@@ -17,9 +17,10 @@
           target="_blank"
           rel="nooppener norefferer"
           class="link"
+          title="Github Profile"
         >
           <octicon name="mark-github" class="icon"/>
-          <span class="link-text">GitHub Profile</span>
+          <span class="link-text">GitHub @TotoCorvidoni</span>
         </a>
         <a
           href="https://github.com/totocorvidoni/my-site"
@@ -28,7 +29,7 @@
           class="link"
         >
           <octicon name="repo" class="icon"/>
-          <span class="link-text">Project Repository</span>
+          <span class="link-text">Portfolio Repository</span>
         </a>
       </div>
     </div>
