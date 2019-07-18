@@ -7,10 +7,10 @@
           :src="coverImage.thumb"
           :alt="coverImage.alt"
           @click="showingFront = false"
-        >
+        />
         <div class="card-wrapper">
           <h3 class="name">{{ name }}</h3>
-          <p class="description">{{ description}}</p>
+          <div class="description" v-html="description"></div>
           <div class="tag-wrapper">
             <base-tag v-for="tag in tags">{{ tag }}</base-tag>
           </div>
@@ -29,11 +29,11 @@
         </div>
         <div class="links">
           <a :href="links.live" target="_blank" rel="nooppener norefferer" class="link">
-            <img src="@/assets/images/door-open-solid.svg" alt="An open door" class="icon">
+            <img src="@/assets/images/door-open-solid.svg" alt="An open door" class="icon" />
             <div class="link-text">Visit Site</div>
           </a>
           <a :href="links.repo" target="_blank" rel="nooppener norefferer" class="link">
-            <octicon name="mark-github" class="icon"/>
+            <octicon name="mark-github" class="icon" />
             <div class="link-text">Source Code</div>
           </a>
         </div>
@@ -113,12 +113,19 @@ export default {
 
   .name {
     text-align: center;
-    margin: 0;
+    margin: 0 0 1em;
   }
 
   .description {
+    line-height: 1.25em;
     height: 100%;
+    margin-bottom: 1em;
     overflow-y: auto;
+
+    p {
+      margin: 0.25em;
+      font-size: .9em;
+    }
 
     &::-webkit-scrollbar {
       width: 0.25rem;
