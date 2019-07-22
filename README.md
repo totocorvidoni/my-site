@@ -1,34 +1,9 @@
-# my-site
+# My Site - [Check it out](https://tomascorridoni.com/)
 
-## Project setup
-```
-npm install
-```
+Porfolio site to showcase some of my work.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+The design of the site it's self is very simple but it has quite a few custom interactive elements made to give it personality and highlight information.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Currently Available for Hire
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+I would love to create something awesome for you. You can contact me at [totocorvidoni@gmail.com](mailto:totocorvidoni@gmail.com), I'll get back to you as soon as possible.
