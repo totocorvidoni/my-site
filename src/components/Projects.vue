@@ -1,8 +1,8 @@
 <template>
   <div id="projects">
+    <h2 class="title">Projects</h2>
     <div class="project-grid">
-      <h2 class="title">Projects</h2>
-      <project-card v-for="project in projects" :key="project.name" v-bind="project"/>
+      <project-card v-for="project in projects" :key="project.name" v-bind="project" />
     </div>
   </div>
 </template>
@@ -28,26 +28,28 @@ export default {
   background: $grey;
   width: 100%;
 
+  .title {
+    text-align: center;
+    color: $grey-lightest;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 2em;
+    margin: 0;
+    padding-top: 1em;
+  }
+
   .project-grid {
-    justify-self: stretch;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, 300px);
-    grid-template-rows: auto;
-    grid-auto-rows: 32rem;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     color: $white;
     margin: 0 auto;
-    max-width: 1500px;
     padding: 1em;
 
-    & > .title {
-      grid-column: 1 / -1;
-      text-align: center;
-      color: $grey-lightest;
-      text-transform: uppercase;
-      letter-spacing: 0.25em;
-      font-size: 2em;
+    & > * {
+      width: 300px;
+      margin: 0.5em;
+      height: 750px;
     }
   }
 }

@@ -107,7 +107,6 @@ export default {
     flex-grow: 2;
     display: flex;
     flex-flow: column;
-    justify-content: center;
     padding: 1em;
   }
 
@@ -118,13 +117,13 @@ export default {
 
   .description {
     line-height: 1.25em;
-    height: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+    height: 350px;
     overflow-y: auto;
 
     p {
       margin: 0.25em;
-      font-size: .9em;
+      font-size: 0.9em;
     }
 
     &::-webkit-scrollbar {
@@ -142,6 +141,7 @@ export default {
   }
 
   .tag-wrapper {
+    margin-top: auto;
     margin-bottom: 0.5em;
   }
 
