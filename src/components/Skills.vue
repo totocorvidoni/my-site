@@ -50,7 +50,7 @@
             <strong class="skill">Node.js</strong> with
             <strong class="skill">Express</strong> and I have even used
             <strong class="skill">Wordpress's REST API</strong> as the back end of a
-            <strong class="skill">Vue</strong> based online store.
+            <strong class="skill">Vue</strong> based online catalog.
           </p>
         </div>
         <div class="flip" tabindex="0">- press to flip -</div>
