@@ -54,7 +54,7 @@ export default {
     return {
       trivia: [
         "Let me tell you a little about me...",
-        "Self-thought developer,",
+        "Self-taught developer,",
         "Living in Argentina,",
         "Graduated in Advertising,",
         "Very detail oriented,",
