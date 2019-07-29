@@ -2,15 +2,11 @@
   <div id="hero">
     <div class="hello">
       <div class="biggest">
-        <h2>Welcome!</h2>
-        <h1>My name is Tomás</h1>
+        <h2>{{ $t('hero.welcome') }}</h2>
+        <h1>{{ $t('hero.name') }}</h1>
       </div>
-      <h2 class="big">Full Stack Web Developer</h2>
-      <item-runner
-        :items="trivia"
-        :delay="2500"
-        :loops="4"
-      >Trying to make the web a little bit more awesome</item-runner>
+      <h2 class="big">{{ $t('hero.job') }}</h2>
+      <item-runner :items="trivia" :delay="2500" :loops="4">{{ $t('hero.tagline') }}</item-runner>
       <div class="links">
         <a
           href="https://github.com/totocorvidoni"
@@ -19,7 +15,7 @@
           class="link"
           title="Github Profile"
         >
-          <octicon name="mark-github" class="icon"/>
+          <octicon name="mark-github" class="icon" />
           <span class="link-text">GitHub @TotoCorvidoni</span>
         </a>
         <a
@@ -28,13 +24,13 @@
           rel="nooppener norefferer"
           class="link"
         >
-          <octicon name="repo" class="icon"/>
-          <span class="link-text">Portfolio Repository</span>
+          <octicon name="repo" class="icon" />
+          <span class="link-text">{{ $t('hero.repo') }}</span>
         </a>
       </div>
     </div>
-    <skills-comp/>
-    <a class="to-projects" href="#projects">Check out some of my Works ↓</a>
+    <skills-comp />
+    <a class="to-projects" href="#projects">{{ $t('hero.projects') }} ↓</a>
   </div>
 </template>
 
@@ -50,24 +46,25 @@ import "vue-octicon/icons/logo-github";
 export default {
   name: "hero-comp",
   components: { ItemRunner, SkillsComp, Octicon },
-  data() {
-    return {
-      trivia: [
-        "Let me tell you a little about me...",
-        "Self-taught developer,",
-        "Living in Argentina,",
-        "Graduated in Advertising,",
-        "Very detail oriented,",
-        "I love clean code,",
-        "People enjoying my apps,",
-        "Preffer things simple,",
-        "Polished,",
-        "Elegant,",
-        "Responsive,",
-        "Snappy,",
-        "Fun"
-      ]
-    };
+
+  computed: {
+    trivia() {
+      return [
+        this.$t("hero.trivia[0]"),
+        this.$t("hero.trivia[1]"),
+        this.$t("hero.trivia[2]"),
+        this.$t("hero.trivia[3]"),
+        this.$t("hero.trivia[4]"),
+        this.$t("hero.trivia[5]"),
+        this.$t("hero.trivia[6]"),
+        this.$t("hero.trivia[7]"),
+        this.$t("hero.trivia[8]"),
+        this.$t("hero.trivia[9]"),
+        this.$t("hero.trivia[10]"),
+        this.$t("hero.trivia[11]"),
+        this.$t("hero.trivia[12]")
+      ];
+    }
   }
 };
 </script>

@@ -11,10 +11,11 @@
       >
         <transition name="slide">
           <p class="item rewind" v-if="hovering" key="rewind">
-            <img src="@/assets/images/rewind.svg" class="rewind-icon"> Rewind?
+            <img src="@/assets/images/rewind.svg" class="rewind-icon" />
+            {{ $t('itemRunner.rewind') }}
           </p>
           <p class="item" v-else key="finish">
-            <slot/>
+            <slot />
           </p>
         </transition>
       </div>

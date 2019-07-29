@@ -2,27 +2,28 @@
   <div id="contact">
     <transition name="slide" mode="out-in">
       <div class="wrapper received" v-if="messageSent" key="received">
-        <h2 class="title">Thanks for your message!</h2>
-        <p>I will get in touch with you shortly.</p>
-        <p>Have a nice day!</p>
+        <h2 class="title">{{ $t('contact.thanks') }}</h2>
+        <p>{{ $t('contact.backToYou') }}</p>
+        <p>{{ $t('contact.goodDay') }}</p>
       </div>
       <div class="wrapper" v-else key="form">
-        <h2 class="title">Let's talk!</h2>
-        <p class="text">Do you have any project or idea that needs my help?</p>
-        <p>Contact me using the form below, I will get back to you shortly and we will build something great!</p>
+        <h2 class="title">{{ $t('contact.title') }}</h2>
+        <p class="text">{{ $t('contact.question') }}</p>
+        <p>{{ $t('contact.contactMe') }}</p>
         <form class="contact-form" @submit.prevent="onContactSubmit">
           <div class="small-fields">
             <div class="field">
-              <label for="name" class="small-label">Name</label>
+              <label for="name" class="small-label">{{ $t('contact.name') }}</label>
               <input
                 type="text"
-                placeholder="Mr. Firstand Lastname"
+                :placeholder="$t('contact.namePlaceholder')"
                 v-model="name"
                 id="name"
                 name="name"
+                :data-vv-as="$t('contact.name')"
                 v-validate="'alpha_spaces|required'"
                 required
-              >
+              />
               <transition name="slide">
                 <span class="error-msg" :key="nameError">{{ nameError }}</span>
               </transition>
@@ -35,36 +36,38 @@
                 value="1"
                 tabindex="-1"
                 autocomplete="no"
-              >
+              />
             </div>
 
             <div class="field">
               <label for="email" class="small-label">Email</label>
               <input
                 type="email"
-                placeholder="me@example.com"
+                :placeholder="$t('contact.emailPlaceholder')"
                 v-model="email"
                 id="email"
                 name="email"
+                data-vv-as="Email"
                 v-validate="'email|required'"
                 required
                 ref="email"
-              >
+              />
               <transition name="slide">
                 <span class="error-msg" :key="emailError">{{ emailError }}</span>
               </transition>
             </div>
 
             <div class="field">
-              <label for="email-confirm" class="small-label">Email Confirm</label>
+              <label for="email-confirm" class="small-label">{{ $t('contact.confirm') }}</label>
               <input
                 type="email"
-                placeholder="me@example.com"
+                :placeholder="$t('contact.emailPlaceholder')"
                 id="email-confirm"
                 name="email confirm"
+                :data-vv-as="$t('contact.confirm')"
                 v-validate="'email|required|confirmed:email'"
                 required
-              >
+              />
               <transition name="slide">
                 <span class="error-msg" :key="emailConfirmError">{{ emailConfirmError }}</span>
               </transition>
@@ -72,7 +75,7 @@
           </div>
 
           <div class="message">
-            <label for="msg">Your message</label>
+            <label for="msg">{{ $t('contact.message') }}</label>
             <textarea
               v-model="message"
               id="msg"
@@ -93,7 +96,7 @@
             ref="submit"
             :value="submitMsg"
             :disabled="errors.any()"
-          >
+          />
         </form>
       </div>
     </transition>
@@ -155,7 +158,9 @@ export default {
     },
 
     submitMsg() {
-      return this.errors.any() ? "Verify!" : "Send";
+      return this.errors.any()
+        ? this.$t("contact.verify")
+        : this.$t("contact.send");
     }
   }
 };

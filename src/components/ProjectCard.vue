@@ -14,7 +14,7 @@
           <div class="tag-wrapper">
             <base-tag v-for="tag in tags">{{ tag }}</base-tag>
           </div>
-          <div class="flip" @click="showingFront = false" tabindex="0">- flip -</div>
+          <div class="flip" @click="showingFront = false" tabindex="0">- {{ $t('projects.flip')}} -</div>
         </div>
       </div>
       <div v-else class="card-back" key="back">
@@ -30,14 +30,14 @@
         <div class="links">
           <a :href="links.live" target="_blank" rel="nooppener norefferer" class="link">
             <img src="@/assets/images/door-open-solid.svg" alt="An open door" class="icon" />
-            <div class="link-text">Visit Site</div>
+            <div class="link-text">{{ $t('projects.site') }}</div>
           </a>
           <a :href="links.repo" target="_blank" rel="nooppener norefferer" class="link">
             <octicon name="mark-github" class="icon" />
-            <div class="link-text">Source Code</div>
+            <div class="link-text">{{ $t('projects.code')}}</div>
           </a>
         </div>
-        <div class="flip" @click="showingFront = true" tabindex="0">- flip -</div>
+        <div class="flip" @click="showingFront = true" tabindex="0">- {{ $t('projects.flip') }} -</div>
       </div>
     </transition>
   </div>

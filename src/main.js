@@ -1,5 +1,6 @@
 import Vue from "vue";
-import VeeValidate from "vee-validate";
+import VeeValidate, { Validator } from "vee-validate";
+import es from "vee-validate/dist/locale/es";
 import App from "./App.vue";
 import "normalize.css";
 import i18n from "./i18n";
@@ -7,6 +8,8 @@ import i18n from "./i18n";
 Vue.use(VeeValidate, {
   classes: true
 });
+
+Validator.localize("es", es);
 
 Vue.config.productionTip = false;
 

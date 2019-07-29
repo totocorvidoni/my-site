@@ -10,14 +10,15 @@
 <script>
 export default {
   name: "nav-comp",
-  data() {
-    return {
-      links: [
-        { ref: "#hero", description: "to top" },
-        { ref: "#projects", description: "works" },
-        { ref: "#contact", description: "contact" }
-      ]
-    };
+
+  computed: {
+    links() {
+      return [
+        { ref: "#hero", description: this.$t("navigator.top") },
+        { ref: "#projects", description: this.$t("navigator.works") },
+        { ref: "#contact", description: this.$t("navigator.contact") }
+      ];
+    }
   }
 };
 </script>
@@ -32,7 +33,6 @@ export default {
   .node-wrapper {
     display: flex;
     border-radius: 50%;
-    // margin: 0 0.25em;
     text-decoration: none;
 
     &:not(:last-of-type)::after {
@@ -52,11 +52,11 @@ export default {
         margin-left: 0.25em;
         opacity: 1;
         transform: translateX(0);
-        width: 3em;
+        width: auto;
       }
 
       &::after {
-        content: none;
+        opacity: 0;
       }
     }
   }

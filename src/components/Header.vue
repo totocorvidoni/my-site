@@ -1,8 +1,9 @@
 <template>
   <header id="header">
-    <nav-comp/>
-    <p class="tagline">Want me to make something awesome for you?</p>
-    <a href="#contact" class="link">Let's get in touch!</a>
+    <button class="button language" @click="toggleLang">{{ langTag }}</button>
+    <nav-comp />
+    <p class="tagline">{{ $t('header.tagline') }}</p>
+    <a href="#contact" class="link">{{ $t('header.contact') }}</a>
   </header>
 </template>
 
@@ -11,7 +12,21 @@ import NavComp from "@/components/Navigator.vue";
 
 export default {
   name: "header-comp",
-  components: { NavComp }
+  components: { NavComp },
+
+  methods: {
+    toggleLang() {
+      const lang = this.$i18n.locale == "en" ? "es" : "en";
+      this.$i18n.locale = lang;
+      this.$validator.localize(lang);
+    }
+  },
+
+  computed: {
+    langTag() {
+      return this.$i18n.locale == "en" ? "English" : "Español";
+    }
+  }
 };
 </script>
 
@@ -43,6 +58,14 @@ export default {
   & > .link {
     flex-grow: auto;
     margin: auto 0 auto 0.25em;
+  }
+
+  .language {
+    background: $orange;
+    color: $white;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 }
 

@@ -1,0 +1,65 @@
+{
+  "navigator": {
+    "top": "inicio",
+    "works": "trabajos",
+    "contact": "contacto"
+  },
+  "header": {
+    "tagline": "¿Necesitás ayuda con tu próximo proyecto?",
+    "contact": "Escribime!"
+  },
+  "hero": {
+    "welcome": "¡Hola!",
+    "name": "Mi nombre es Tomás",
+    "job": "Desarrollador Web Full Stack",
+    "tagline": "Haciendo de la web un lugar un poco más fantástico",
+    "repo": "Repositorio del sitio",
+    "trivia": [
+      "Te cuento un poco sobre mi...",
+      "Desarrollador autodidacta,",
+      "Vivo en Argentina,",
+      "Licenciado en Publicidad,",
+      "Muy orientado a los detalles,",
+      "Me encanta el código limpio,",
+      "Que la gente disfrute de mis apps,",
+      "Mantener las cosas simples,",
+      "Pulidas,",
+      "Elegantes,",
+      "Responsivas,",
+      "Rápidas,",
+      "Divertido"
+    ],
+    "projects": "Algúnos de mis trabajos"
+  },
+  "itemRunner": {
+    "rewind": "Rebobinar?"
+  },
+  "skills": {
+    "frontTitle": "Habilidades del Front End",
+    "backTitle": "Habilidades del Back End",
+    "frontDescription": "<p>Por lo general creo sitios utilizando <strong class=\"skill\">Vue.js</strong> preparándolos con <strong class=\"skill\">Webpack</strong> y <strong class=\"skill\">npm</strong>. Constantemente actualizo mis conocimientos de <strong class=\"skill\">HTML5</strong>, <strong class=\"skill\">CSS3 + Sass</strong> y <strong class=\"skill\">Javascript</strong> para poder ofrecer un producto ágil y seguro.</p><p>También realizo proyectos basados en <strong class=\"skill\">React</strong> y <strong class=\"skill\">Wordpress</strong>. </p><p>Escribo código <strong>limpio</strong> y <strong>eficiente</strong> para mantener las aplicaciones flexibles y robustas. De esta forma es posible concentrarse en que el producto final sea <strong>fácil</strong> y <strong>agradable</strong> de utilizar para nuestros visitantes.</p>",
+    "backDescription": "<p>Principalmente utilizo <strong class=\"skill\">Ruby on Rails</strong> con bases de datos <strong class=\"skill\">PostgreSQl</strong> o <strong class=\"skill\">MySQL</strong>.</p><p>Prefiero utilizar el back end como una API que sirva directamente a sitios optimizados para mostrar la información, aunque siempre hay casos donde es mejor focalizar la acción en el lado del servidor.</p><p>Si bien mi framework principal es <strong class=\"skill\">Rails</strong>, estoy abierto a alternativas. En este momento estoy aprendiendo <strong class=\"skill\">Node.js</strong> con <strong class=\"skill\">Express</strong> e incluso utilizé la <strong class=\"skill\">REST API de Wordpress</strong> como el back end de un catálogo online hecho con <strong class=\"skill\">Vue</strong>.</p>",
+    "flip": "presioná para girar"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "flip": "Girar",
+    "site": "Visitar Sitio",
+    "code": "Code Fuente"
+  },
+  "contact": {
+    "title": "¡Hablemos!",
+    "question": "¿Te puedo ayudar con algún proyecto o idea?",
+    "contactMe": "Contactame utilizando el siguiente formulario y a la brevedad voy a responderte para que nos pongamos manos a la obra.",
+    "name": "Nombre",
+    "namePlaceholder": "Ej: Júan Pérez",
+    "emailPlaceholder": "yo@ejemplo.com",
+    "confirm": "Confirmación de Email",
+    "message": "Tu Mensaje",
+    "send": "Enviar",
+    "verify": "¡Verificar!",
+    "thanks": "¡Gracias por tu mensaje!",
+    "backToYou": "Me pondré en contacto a la brevedad.",
+    "goodDay": "Que tengas un buen día!"
+  }
+}

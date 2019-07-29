@@ -1,6 +1,6 @@
 <template>
   <div id="projects">
-    <h2 class="title">Projects</h2>
+    <h2 class="title">{{ $t("projects.title") }}</h2>
     <div class="project-grid">
       <project-card v-for="project in projects" :key="project.name" v-bind="project" />
     </div>
@@ -9,16 +9,17 @@
 
 <script>
 import ProjectCard from "@/components/ProjectCard.vue";
-import projectList from "@/assets/projectList";
+import projectListEn from "@/assets/projectListEn";
+import projectListEs from "@/assets/projectListEs";
 
 export default {
   name: "projects-comp",
   components: { ProjectCard },
 
-  data() {
-    return {
-      projects: projectList
-    };
+  computed: {
+    projects() {
+      return this.$i18n.locale == "es" ? projectListEs : projectListEn;
+    }
   }
 };
 </script>
