@@ -1,6 +1,6 @@
 <template>
   <header id="header">
-    <button class="button language" @click="toggleLang">{{ langTag }}</button>
+    <button class="button link language" @click="toggleLang">{{ langTag }}</button>
     <nav-comp />
     <p class="tagline">{{ $t('header.tagline') }}</p>
     <a href="#contact" class="link">{{ $t('header.contact') }}</a>
@@ -62,13 +62,14 @@ export default {
 
   .language {
     background: $orange;
-    color: $white;
     border: none;
+    color: $white;
     font-weight: 700;
     text-transform: uppercase;
 
     &:hover {
       cursor: pointer;
+      text-decoration: none;
     }
   }
 }
