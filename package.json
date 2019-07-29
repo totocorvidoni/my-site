@@ -2,13 +2,13 @@
   "name": "my-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tomascorridoni.com/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -16,6 +16,7 @@
     "normalize.css": "^8.0.1",
     "vee-validate": "^2.2.11",
     "vue": "^2.6.10",
+    "vue-i18n": "^8.0.0",
     "vue-octicon": "^2.1.1",
     "vue-pure-lightbox": "^3.1.0"
   },
@@ -34,6 +35,8 @@
     "gh-pages": "^2.0.1",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
+    "vue-cli-plugin-i18n": "^0.6.0",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "homepage": "https://tomascorridoni.com/"
 }
