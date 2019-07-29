@@ -39,7 +39,7 @@ export default [
       live: "https://totocorvidoni.github.io/todo-vue/"
     },
     description:
-      "<p>Hecho en con Vue, mi intento sobra una app de listas.</p><p>Un gran ejercicio que me dio la oportunidad de concentrarme en la transferencia de datos y aspectos técnicos de un sitio web necesarios para cualquier tipo de funcionalidad compleja.</p><p> Aprovechando la simpleza de este tipo de aplicaciones me concentré en agregar funcionalidades adicionales como prioridades y fechas de vencimiento.</p>",
+      "<p>Hecho en Vue, mi app de listas.</p><p>Un gran ejercicio que me dio la oportunidad de concentrarme en la transferencia de datos y aspectos técnicos de un sitio web necesarios para cualquier tipo de funcionalidad compleja.</p><p> Aprovechando la simpleza de este tipo de aplicaciones me concentré en agregar funcionalidades adicionales como prioridades y fechas de vencimiento.</p>",
     tags: ["Lista", "Vue", "Vuex", "Sass"],
     images: [
       {

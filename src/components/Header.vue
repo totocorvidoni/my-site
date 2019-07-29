@@ -66,6 +66,10 @@ export default {
     border: none;
     font-weight: 700;
     text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
