@@ -38,7 +38,7 @@ export default [
       live: "https://bountytea.com.ar"
     },
     description:
-      "<p>A site for artisan tea blends.</p> <p>The site is designed to let the visitors inspect and get to know all the tea blends the company offers. It also provides lets them naturally flow to their contact channels to make a purchase.</p> <p>In the first year of the site being live, their sales went up by a considerable margin and currently more than 40% of total sales come from the site.</p>",
+      "<p>A site for artisan tea blends.</p> <p>It is designed to let the visitors inspect and get to know all the tea blends the company offers. It also lets them naturally flow to their contact channels to make a purchase.</p> <p>In the first year of the site being live, their sales went up by a considerable margin and currently more than 40% of total sales come from the site.</p>",
     tags: ["Products", "HTML", "CSS"],
     images: [
       {
