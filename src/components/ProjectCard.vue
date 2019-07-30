@@ -28,11 +28,11 @@
           />
         </div>
         <div class="links">
-          <a :href="links.live" target="_blank" rel="nooppener norefferer" class="link">
+          <a v-if="links.live" :href="links.live" target="_blank" rel="nooppener norefferer" class="link">
             <img src="@/assets/images/door-open-solid.svg" alt="An open door" class="icon" />
             <div class="link-text">{{ $t('projects.site') }}</div>
           </a>
-          <a :href="links.repo" target="_blank" rel="nooppener norefferer" class="link">
+          <a v-if="links.repo" :href="links.repo" target="_blank" rel="nooppener norefferer" class="link">
             <octicon name="mark-github" class="icon" />
             <div class="link-text">{{ $t('projects.code')}}</div>
           </a>
