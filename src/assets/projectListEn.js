@@ -33,13 +33,45 @@ export default [
     ]
   },
   {
+    name: "Bounty Tea",
+    links: {
+      live: "https://bountytea.com.ar"
+    },
+    description:
+      "<p>A site for artisan tea blends.</p> <p>The site is designed to let the visitors inspect and get to know all the tea blends the company offers. It also provides lets them naturally flow to their contact channels to make a purchase.</p> <p>In the first year of the site being live, their sales went up by a considerable margin and currently more than 40% of total sales come from the site.</p>",
+    tags: ["Products", "HTML", "CSS"],
+    images: [
+      {
+        thumb: require("@/assets/images/projects/bounty/01-thumb.jpg"),
+        full: require("@/assets/images/projects/bounty/01.png"),
+        alt: "Bounty Tea Logo and site links."
+      },
+      {
+        thumb: require("@/assets/images/projects/bounty/02-thumb.jpg"),
+        full: require("@/assets/images/projects/bounty/02.png"),
+        alt: "Luna roja product view and the blend stripe above."
+      },
+      {
+        thumb: require("@/assets/images/projects/bounty/03-thumb.jpg"),
+        full: require("@/assets/images/projects/bounty/03.png"),
+        alt: "Their 3 presentations Single, Tea Set, Samplers"
+      },
+      {
+        thumb: require("@/assets/images/projects/bounty/04-thumb.jpg"),
+        full: require("@/assets/images/projects/bounty/04.png"),
+        alt:
+          "Blend gallery where you can see their color, name and short description."
+      }
+    ]
+  },
+  {
     name: "Thou Shall Do",
     links: {
       repo: "https://github.com/totocorvidoni/todo-vue",
       live: "https://totocorvidoni.github.io/todo-vue/"
     },
     description:
-      "<p>Made with Vue, it's my take on todo lists. </p><p> Taking advantage of the simplicity of a todo manager I payed special attention on refining and integrating additional features such as, priorities and due dates. It allowed me to mainly focus on logic and functions to manipulate and present data.</p>",
+      "<p>Made with Vue, it's my take on todo lists. </p><p>Taking advantage of the simplicity of a todo manager I payed special attention on refining and integrating additional features such as, priorities and due dates. It allowed me to mainly focus on logic and functions to manipulate and present data.</p>",
     tags: ["Todo", "Vue", "Vuex", "Sass"],
     images: [
       {

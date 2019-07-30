@@ -33,6 +33,37 @@ export default [
     ]
   },
   {
+    name: "Bounty Tea",
+    links: {
+      live: "https://bountytea.com.ar"
+    },
+    description:
+      "<p>Sitio web de blends de té artesanales.</p> <p>Está enfocado a que los visitantes puedan examinar los productos de forma detenida y dirigirlos a sus medios de contactos para realizar pedidos.</p> <p>Durante el primer año que se inaguró la web, sus ventas incrementaron considerablemente y actualmente más del 40% de los pedidos llegan por ese canal.</p>",
+    tags: ["Productos", "HTML", "CSS"],
+    images: [
+      {
+        thumb: require("@/assets/images/projects/bounty/01-thumb.jpg"),
+        full: require("@/assets/images/projects/bounty/01.png"),
+        alt: "Logo de Bounty Tea y links del sitio."
+      },
+      {
+        thumb: require("@/assets/images/projects/bounty/02-thumb.jpg"),
+        full: require("@/assets/images/projects/bounty/02.png"),
+        alt: "Vista del producto Luna Roja con tira de otros blend arriba."
+      },
+      {
+        thumb: require("@/assets/images/projects/bounty/03-thumb.jpg"),
+        full: require("@/assets/images/projects/bounty/03.png"),
+        alt: "Las diferentes presentaciones Individual, Tea Set, Degustación"
+      },
+      {
+        thumb: require("@/assets/images/projects/bounty/04-thumb.jpg"),
+        full: require("@/assets/images/projects/bounty/04.png"),
+        alt: "Galería de los diferentes blends."
+      }
+    ]
+  },
+  {
     name: "Thou Shall Do",
     links: {
       repo: "https://github.com/totocorvidoni/todo-vue",
