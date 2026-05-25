@@ -40,17 +40,25 @@ export default {
   }
 
   .project-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Always 3 per row, each filling its column.
+    gap: 1em;
     color: $white;
     margin: 0 auto;
     padding: 1em;
+    max-width: 1100px;
 
     & > * {
-      width: 300px;
-      margin: 0.5em;
+      min-width: 0; // Let cards shrink to fit their column instead of overflowing.
       height: 750px;
+    }
+
+    @media screen and (max-width: 770px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 500px) {
+      grid-template-columns: 1fr;
     }
   }
 }

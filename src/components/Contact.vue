@@ -98,6 +98,10 @@
             :disabled="errors.any()"
           />
         </form>
+        <p class="email-direct">
+          {{ $t('contact.orEmail') }}
+          <a href="mailto:tpcorridoni@gmail.com">tpcorridoni@gmail.com</a>
+        </p>
       </div>
     </transition>
   </div>
@@ -189,6 +193,21 @@ export default {
   .title {
     margin: 0;
     font-size: 2.5em;
+  }
+
+  .email-direct {
+    margin-top: 1.5em;
+    text-align: center;
+
+    a {
+      color: $green;
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .contact-form {
