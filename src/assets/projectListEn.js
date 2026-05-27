@@ -1,5 +1,36 @@
 export default [
   {
+    name: "THERMS",
+    links: {
+      live: "https://www.therms.io/"
+    },
+    description:
+      "<p>I joined the team as a frontend developer to help build and refine the public site.</p> <p>Built with Astro and powered by a Ghost.js backend, the site delivers fast static pages while leveraging Ghost's publishing workflow for content management.</p>",
+    tags: ["TypeScript", "Astro", "Ghost.js"],
+    images: [
+      {
+        thumb: require("@/assets/images/projects/THERMS/01-thumb.png"),
+        full: require("@/assets/images/projects/THERMS/01.png"),
+        alt: "THERMS logo."
+      },
+      {
+        thumb: require("@/assets/images/projects/THERMS/02-thumb.png"),
+        full: require("@/assets/images/projects/THERMS/02.png"),
+        alt: "THERMS Home Screen."
+      },
+      {
+        thumb: require("@/assets/images/projects/THERMS/03-thumb.png"),
+        full: require("@/assets/images/projects/THERMS/03.png"),
+        alt: "THERMS Features Page."
+      },
+      {
+        thumb: require("@/assets/images/projects/THERMS/04-thumb.png"),
+        full: require("@/assets/images/projects/THERMS/04.png"),
+        alt: "THERMS Blog."
+      }
+    ]
+  },
+  {
     name: "Pupe Lepú",
     links: {
       repo: "https://github.com/totocorvidoni/vue-crafts-store",

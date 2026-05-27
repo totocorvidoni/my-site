@@ -87,6 +87,7 @@ export default {
 
   // Front side
   .card-front {
+    flex: 1;
     display: flex;
     flex-flow: column;
     background: $white;
@@ -148,6 +149,7 @@ export default {
   // Backside
 
   .card-back {
+    flex: 1;
     display: flex;
     flex-flow: column;
     align-content: flex-start;
